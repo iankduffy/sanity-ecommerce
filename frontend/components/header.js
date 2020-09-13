@@ -1,5 +1,5 @@
 import Link from 'next/link';
-// import NavItem from './navItem';
+import Nav from './nav';
 // import DropDown from './dropdown'
 // import MenuIcon from './icons/menu'
 // import CrossIcon from './icons/cross'
@@ -19,7 +19,7 @@ const Header = ({mainMenu, siteLogo, logoText}) => {
       </div>
       <div className={styles.oHeader}>
         <Link href="/">
-          <a className=""><img src={urlFor(siteLogo).auto('format').width(100).url()} alt="Site Logo"/><p>{logoText}</p></a>
+          <a><img src={urlFor(siteLogo).auto('format').width(100).url()} className={styles.oHeader__logo} alt="Site Logo"/><p>{logoText}</p></a>
         </Link>
         <input />
         <div>
@@ -31,6 +31,7 @@ const Header = ({mainMenu, siteLogo, logoText}) => {
           </Link>
         </div>
       </div>
+      <Nav mainMenu={mainMenu} />
     </div>
   )
 }

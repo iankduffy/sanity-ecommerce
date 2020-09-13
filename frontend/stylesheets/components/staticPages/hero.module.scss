@@ -1,0 +1,21 @@
+.hero {
+  max-height: 80vh;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    object-fit: cover;
+  }
+
+  &__text {
+    min-width: 30vw;
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    position: absolute;
+    left: 0; 
+    bottom: 20%;
+    z-index: 2;
+  }
+}
+

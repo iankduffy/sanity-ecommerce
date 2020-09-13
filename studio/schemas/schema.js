@@ -16,7 +16,8 @@ import blockContent from './objects/blockContent'
 import productVariant from './objects/productVariant'
 import navItem from './objects/navItem'
 import hero from './objects/hero'
-
+import tabsComponents from './objects/tabsComponents'
+import inspirationComponent from './objects/inspirationComponent'
 
 import localeString from './locale/String'
 import localeText from './locale/Text'
@@ -40,6 +41,8 @@ export default createSchema({
     pages,
     navItem,
     hero,
+    tabsComponents,
+    inspirationComponent,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,

@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Header from './header'
 // import Footer from './footer'
 
-export default ({ children, siteSettings, mainMenu, footerMenu}) => (
+const Layout = ({ children, siteSettings, mainMenu, footerMenu}) => (
     <div>
       <Head>
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
@@ -17,8 +17,7 @@ export default ({ children, siteSettings, mainMenu, footerMenu}) => (
         <meta name="twitter:image:alt" content={siteSettings.siteTitle}/>
       </Head>
       <div className="">
-        <Header />
-        {/* <Nav mainMenu={mainMenu} siteLogo={siteSettings.siteLogo} logoText={siteSettings.logoText}/> */}
+        <Header mainMenu={mainMenu} siteLogo={siteSettings.siteLogo} />
         <main>
           {children}
         </main>
@@ -26,3 +25,5 @@ export default ({ children, siteSettings, mainMenu, footerMenu}) => (
       </div>
     </div>
 )
+
+export default Layout

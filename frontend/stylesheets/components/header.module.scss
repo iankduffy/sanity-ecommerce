@@ -1,10 +1,17 @@
+@import '../module-basics.scss';
+
 .oHeader {
   background: #fff;
   width: 100vw;
-  min-height: 80px;
+  max-height: 80px;
   display: flex; 
   justify-content: space-between;
-  padding: 10px;
+  align-items: center;
+  padding: 10px 30px;
+
+  &__logo {
+    max-height: 60px;
+  }
 }
 
 .preHeader {
@@ -15,5 +22,14 @@
   text-align: center;
   text-transform: uppercase;
   font-size: 0.9rem;
-  padding: 0.2rem;
+  padding: 0.2rem 30px;
+}
+
+.nav {  
+  border-top: 1px solid #333;
+  margin: 0 auto;
+  padding: 10px;
+  background: #fff;
+  width: 100vw;
+  min-height: 30px;
 }

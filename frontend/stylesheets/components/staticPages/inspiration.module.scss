@@ -1,0 +1,28 @@
+@import '../../module-basics.scss';
+
+.inspiration {
+  background: #eee;
+  width: 100vw;
+
+  &_container {
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 20px 0;
+  }
+}
+
+.paragraph {
+  max-width: 500px;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+}
+
+.compContainer {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 2.5%;
+}

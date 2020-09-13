@@ -49,6 +49,11 @@ const homePageQuery = `*[_type == "siteSettings"][0] {
     ...,
     content[] {
       ...,
+      _type == "inspiration" => {
+        products[]->{
+          ...
+        }
+      }
     }
   }
 }`

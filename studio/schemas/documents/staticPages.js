@@ -12,7 +12,9 @@ export default {
       type: 'array',
       title: 'Page sections',
       of: [
-        { type: 'hero' }
+        { type: 'hero' },
+        { type: 'tabsComponents' },
+        { type: 'inspiration' }
       ],
     }
   ], 
