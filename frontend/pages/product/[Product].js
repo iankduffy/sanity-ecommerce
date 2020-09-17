@@ -8,20 +8,9 @@ import ProductFilters from '../../components/plp/filters';
 
 
 
-const Categories = ({mainMenu, siteSettings, footerMenu, categories}) => {
+const ProductPage = ({mainMenu, siteSettings, footerMenu}) => {
   const [productData, setProductData] = useState([])
   const [loaded, setLoaded] = useState(false)
-  const id = categories._id
-
-  useEffect(() => {
-    async function fetchData() {
-      return await sanity.fetch(CategoriesProductQuery, {id}).then(res => {
-        setLoaded(true)
-        setProductData(res)
-      })
-    }
-    fetchData()
-  }, [])
 
   useEffect(() => {
     console.log({productData})
@@ -29,10 +18,7 @@ const Categories = ({mainMenu, siteSettings, footerMenu, categories}) => {
 
   return (
   <Layout mainMenu={mainMenu} siteSettings={siteSettings} footerMenu={footerMenu}>
-    <div className="container">
-    <ProductFilters/>
-    {loaded ? <ProductListings productsData={productData} /> : 'loading'}
-    </div>
+    Product
   </Layout>
   // <div>Hello</div>
   )
@@ -60,22 +46,13 @@ const mainMenuQuery = `*[_type == "nav" && id == "main-menu"][0] {
  	}
  }`
 
- const CategoriesQuery = `
- *[_type == "category" && slug.current == $slug] {
-    _id,
-    "categories": *[_type == 'category' && references(^._id)],
-    title,
-    description
-  }[0]
-`
-
 const CategoriesProductQuery = `
   *[_type == "product" && references($id)] {
     ...
   }
 `
 
-Categories.getInitialProps = async ({query}) => {
+ProductPage.getInitialProps = async ({query}) => {
   let { slug = "" } = query
   slug = slug.toLowerCase()
   console.log({query})
@@ -88,15 +65,13 @@ Categories.getInitialProps = async ({query}) => {
   const mainMenu = await sanity.fetch(mainMenuQuery);
   const siteSettings = await sanity.fetch(siteSettingsQuery);
   const footerMenu = await sanity.fetch(footerMenuQuery);
-  const categories = await sanity.fetch(CategoriesQuery, {slug});
 
   return { 
     mainMenu,
     footerMenu,
-    siteSettings,
-    categories
+    siteSettings
   }
 }
 
 
-export default Categories
+export default ProductPage

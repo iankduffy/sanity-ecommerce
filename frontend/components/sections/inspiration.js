@@ -4,6 +4,7 @@ import Link from 'next/link';
 import urlFor from '../../lib/image'
 import srcSet from '../../lib/srcset'
 import BlockContent from '@sanity/block-content-to-react'
+import ProductLink from '../plp/productLink'
 
 import groq from 'groq'
 import sanity from '../../lib/sanity';
@@ -17,20 +18,6 @@ const ArticleLink = ({page}) => {
       <a className={styles.article}>
         <img src={urlFor(page[0].image).width(400).auto('format').url()} alt=""/>
         <h3 className="h4">{page[0].title}</h3>
-      </a>
-    </Link>
-  )
-}
-
-const ProductLink = ({product}) => {
-  console.log(product)
-  return (
-    <Link href={product.slug.current} >
-      <a>
-        <img src={urlFor(product.defaultProductVariant.images[0]).width(400).auto('format').url()} alt=""/>
-        <p className="h5">{product.title}</p>
-        <p>£{product.defaultProductVariant.price}</p>
-
       </a>
     </Link>
   )

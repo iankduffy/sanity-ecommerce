@@ -4,7 +4,7 @@ import urlFor from '../../lib/image';
 
 const ProductFilters= () => {
   return ( 
-    <div className='col-4'>
+    <div className='col-12@xs col-4@md'>
       Filters
     </div>
   )

@@ -25,7 +25,7 @@ const TabsComponents = ({tabs}) => {
             {tab.links?.map((link, key) => 
               <Link key={key} href={link.link}>
                 <a className="">
-                  <img src={urlFor(link.image).width(1200 / 4).auto('format').url()} alt={link.text}/>
+                  <img src={urlFor(link.image).width(1200 / 4).height(475).auto('format').url()} alt={link.text}/>
                   <p>{link.text}</p>
                 </a>
               </Link>

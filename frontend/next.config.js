@@ -50,9 +50,10 @@ const reduceRoutes = (obj, route) => {
 
 const reduceCategoriesRoutes = (obj, route) => {
 
-  const {page = {}, slug = {} } = route
+  const {page = {}, slug = {}} = route
+  console.log({slug})
   const { _createdAt, _updatedAt} = page
-  const path = `/category/${route['slug']['current']}`
+  const path = `/${route['slug']['current']}`
   // console.log({path})
   obj[path] = {
     query: {
@@ -60,7 +61,26 @@ const reduceCategoriesRoutes = (obj, route) => {
     },
     _createdAt,
     _updatedAt,
-    page: '/category/Categories'
+    page: '/category/[Categories]'
+  }
+  return obj
+}
+
+const reduceProductRoutes = (obj, route) => {
+
+  const {page = {}, slug = {}} = route
+  const { _createdAt, _updatedAt} = page
+
+  console.log(route['slug']['current'])
+  const path = `${route['slug']['current']}`
+  // console.log({path})
+  obj[path] = {
+    query: {
+      slug: slug.current
+    },
+    _createdAt,
+    _updatedAt,
+    page: '/product/[Product]'
   }
   return obj
 }
@@ -68,13 +88,9 @@ const reduceCategoriesRoutes = (obj, route) => {
 module.exports = {
   trailingSlash: isProduction ? true : false,
   exportPathMap: async function () {
-    let paths
     const staticRoutes = await client.fetch(PageQuery)
     const categoryRoutes = await client.fetch(CategoriesQuery)
     const productRoutes = await client.fetch(ProductsQuery)
-
-    console.log({staticRoutes})
-
 
     let routes = staticRoutes.routes
     let categoriesRoutes = categoryRoutes.routes
@@ -83,7 +99,7 @@ module.exports = {
     const nextRoutes = {
       ...routes.filter(({slug}) => slug.current).reduce(reduceRoutes, {}),
       ...categoriesRoutes.filter(({slug}) => slug.current).reduce(reduceCategoriesRoutes, {}),
-      ...productsRoutes.filter(({slug}) => slug.current).reduce(reduceCategoriesRoutes, {}),
+      ...productsRoutes.filter(({slug}) => slug.current).reduce(reduceProductRoutes, {}),
     }
 
     return nextRoutes

@@ -15,31 +15,18 @@ export default {
             {
               name: "route",
               type: 'reference',
-              to: { type: 'routes' },
+              to: [
+                {type: 'routes'},
+                {type: 'category'},
+              ],
             },{
               name: 'title',
               type: 'string',
               title: 'Text for Link',
             },
-            {
-              name: 'componentID',
-              type: 'string',
-              title: 'Link to Section',
-            }, 
           ]
         }
       ]
-    },
-    {
-      name: "text",
-      type: "string",
-      title: "Text for drop down"
-    },
-    // {
-    //   name: 'componentID',
-    //   type: 'string',
-    //   title: 'Link to Section',
-    //   description: 'Using components id for auto scroll to component',
-    // }
+    }
   ]
 }

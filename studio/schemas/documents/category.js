@@ -13,8 +13,11 @@ export default {
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'title',
-        maxLength: 96
+        source: doc => `category/${doc.title}`,
+        slugify: input => input
+          .toLowerCase()
+          .replace(/\s+/g, '-')
+          .slice(0, 200)
       }
     },
     {
