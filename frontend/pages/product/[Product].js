@@ -9,18 +9,17 @@ import ProductFilters from '../../components/plp/filters';
 
 
 const ProductPage = ({mainMenu, siteSettings, footerMenu}) => {
-  const [productData, setProductData] = useState([])
-  const [loaded, setLoaded] = useState(false)
-
-  useEffect(() => {
-    console.log({productData})
-  }, [productData])
 
   return (
   <Layout mainMenu={mainMenu} siteSettings={siteSettings} footerMenu={footerMenu}>
-    Product
+    {/* Top section */}
+      {/* Brief Name and tagline */}
+      {/* Product Images */}
+      {/* Add to cart form */}
+    {/* Lower Section */}
+      {/* More information */}
+      {/* reviews? */}
   </Layout>
-  // <div>Hello</div>
   )
 }
 

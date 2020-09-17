@@ -23,9 +23,9 @@ const Header = ({mainMenu, siteLogo, logoText}) => {
         </Link>
         <input />
         <div>
-          <Link href="/">
+          {/* <Link href="/">
             Wishlist
-          </Link>
+          </Link> */}
           <Link href="/">
             Minibag
           </Link>
