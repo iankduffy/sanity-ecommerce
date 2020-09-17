@@ -14,7 +14,8 @@ export default {
       of: [
         { type: 'hero' },
         { type: 'tabsComponents' },
-        { type: 'inspiration' }
+        { type: 'inspiration' }, 
+        { type: 'sixtyFortyComponent' }
       ],
     }
   ], 

@@ -43,10 +43,10 @@ export default {
         }
       ]
     }, {
+      name: "products",
       title: 'Products',
       type: 'array',
       of: [{
-          name: "product",
           type: 'reference',
           to: { type: 'product' },
       }]

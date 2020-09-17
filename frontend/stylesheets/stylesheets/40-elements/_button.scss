@@ -1,0 +1,12 @@
+.c-btn {
+  width: 100%; 
+  text-align: center;
+  background: #333;
+  color: #fff;
+  display: block;
+  padding: 10px;
+  transition: 500ms;
+  &:hover {
+    background: #444;
+  }
+}

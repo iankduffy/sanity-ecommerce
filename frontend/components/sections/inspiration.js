@@ -10,7 +10,8 @@ import sanity from '../../lib/sanity';
 
 
 const ArticleLink = ({page}) => {
-  console.log(page[0].route)
+  // console.log(page[0].route)
+  // console.log(pages)
   return (
     <Link href={page[0].route} >
       <a className={styles.article}>
@@ -36,7 +37,7 @@ const ProductLink = ({product}) => {
 }
 
 const Inspiration = ({heading, paragraph, page, products}) => {
-  console.log({products})
+  console.log({page})
   return (
     <section className={styles.inspiration}>
       <div className={styles.inspiration_container}>
