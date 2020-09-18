@@ -13,7 +13,7 @@ export default {
       title: 'Slug',
       type: 'slug',
       options: {
-        source: doc => `category/${doc.title}`,
+        source: doc => `/category/${doc.title}`,
         slugify: input => input
           .toLowerCase()
           .replace(/\s+/g, '-')

@@ -49,7 +49,6 @@ const reduceRoutes = (obj, route) => {
 }
 
 const reduceCategoriesRoutes = (obj, route) => {
-
   const {page = {}, slug = {}} = route
   console.log({slug})
   const { _createdAt, _updatedAt} = page

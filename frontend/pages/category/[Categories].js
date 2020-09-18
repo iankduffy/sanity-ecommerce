@@ -5,23 +5,24 @@ import sanity from '../../lib/sanity';
 // import RenderSections from '../../components/renderSections';
 import ProductListings from '../../components/plp/productListing';
 import ProductFilters from '../../components/plp/filters';
-import category from '../../../studio/schemas/documents/category';
 
-const Categories = ({mainMenu, siteSettings, footerMenu}) => {
+
+
+const Categories = ({mainMenu, siteSettings, footerMenu, categoriesInfo}) => {
   const [productData, setProductData] = useState([])
   const [loaded, setLoaded] = useState(false)
-  console.log(siteSettings)
-  // const id = categories._id
 
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     return await sanity.fetch(CategoriesProductQuery, {id}).then(res => {
-  //       setLoaded(true)
-  //       setProductData(res)
-  //     })
-  //   }
-  //   fetchData()
-  // }, [])
+  useEffect(() => {
+    setLoaded(false)
+    async function fetchData() {
+      let id = categoriesInfo._id
+      return await sanity.fetch(CategoriesProductQuery, {id}).then(res => {
+        setLoaded(true)
+        setProductData(res)
+      })
+    }
+    fetchData()
+  }, [categoriesInfo])
 
   useEffect(() => {
     console.log({productData})
@@ -74,69 +75,29 @@ const CategoriesProductQuery = `
   }
 `
 
-// Categories.getInitialProps = async({query}) => {
-//   let { slug = "" } = query
-//   slug = slug.toLowerCase()
-//   console.log({query})
+Categories.getInitialProps = async({query}) => {
+  let slug = `/category/${query.Categories}`
+  slug = slug.toLowerCase()
+  console.log({query})
 
-//   if (!query) {
-//     console.error('no query')
-//     return
-//   }
+  if (!query) {
+    console.error('no query')
+    return
+  }
 
-//   console.log({query})
-
-//   const mainMenu = await sanity.fetch(mainMenuQuery);
-//   const siteSettings = await sanity.fetch(siteSettingsQuery);
-//   const footerMenu = await sanity.fetch(footerMenuQuery);
-//   const categories = await sanity.fetch(CategoriesQuery, {slug});
-
-//   return { 
-//     mainMenu,
-//     footerMenu,
-//     siteSettings,
-//     categories
-//   }
-// }
-
-export async function getStaticProps({params}) {
-  const slug = `/category/${params.Categories}`
+  console.log({query})
 
   const mainMenu = await sanity.fetch(mainMenuQuery);
   const siteSettings = await sanity.fetch(siteSettingsQuery);
   const footerMenu = await sanity.fetch(footerMenuQuery);
-  // const categories = await sanity.fetch(CategoriesQuery, {slug});
+  const categoriesInfo = await sanity.fetch(CategoriesQuery, {slug});
 
-  console.log({slug})
-  return {
-    props: {
+  return { 
     mainMenu,
     footerMenu,
     siteSettings,
-    }
+    categoriesInfo
   }
 }
-
-const CategoryQuery = `
-  *[_type == "category"] {
-    slug
-  }
-`
-export async function getStaticPaths() {
-  const categories = await sanity.fetch(CategoryQuery);
-
-  // const data = categories.map(category => { Categories: category.slug.current })
-  // console.log(data)
-  return {
-    paths:
-      categories.map((category) => ({
-        params: {
-          Categories: category?.slug?.current,
-        },
-      })) || [],
-    fallback: true,
-  }
-}
-
 
 export default Categories
