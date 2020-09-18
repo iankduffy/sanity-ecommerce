@@ -2,11 +2,6 @@ import {useEffect, useState} from 'react'
 import Layout from '../../components/layout';
 import groq from 'groq'
 import sanity from '../../lib/sanity';
-import RenderSections from '../../components/renderSections';
-import ProductListings from '../../components/plp/ProductListing';
-import ProductFilters from '../../components/plp/filters';
-
-
 
 const ProductPage = ({mainMenu, siteSettings, footerMenu}) => {
 
