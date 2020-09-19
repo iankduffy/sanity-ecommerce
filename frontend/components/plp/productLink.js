@@ -1,7 +1,7 @@
 // import styles from '../stylesheets/components/header.module.scss'
 import Link from 'next/link';
 import urlFor from '../../lib/image';
-import styles from '../../stylesheets/components/product/ProductLink.module.scss'
+import styles from '../../stylesheets/components/product/productLink.module.scss'
 
 const ProductLink = ({product}) => {
 
