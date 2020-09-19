@@ -79,11 +79,11 @@ StaticPage.getInitialProps = async ({query}) => {
 
   const mainMenu = await sanity.fetch(mainMenuQuery);
   const siteSettings = await sanity.fetch(siteSettingsQuery);
-  const footerMenu = await sanity.fetch(footerMenuQuery);
+  // const footerMenu = await sanity.fetch(footerMenuQuery);
 
   return { 
     mainMenu,
-    footerMenu,
+    // footerMenu,
     staticPageContent,
     siteSettings,
   }

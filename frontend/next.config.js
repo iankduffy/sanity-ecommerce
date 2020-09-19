@@ -51,15 +51,12 @@ const reduceRoutes = (obj, route) => {
 const reduceCategoriesRoutes = (obj, route) => {
   const {page = {}, slug = {}} = route
   console.log({slug})
-  const { _createdAt, _updatedAt} = page
-  const path = `/${route['slug']['current']}`
+  const path = `${route['slug']['current']}`
   // console.log({path})
   obj[path] = {
     query: {
       slug: slug.current
     },
-    _createdAt,
-    _updatedAt,
     page: '/category/[Categories]'
   }
   return obj
@@ -68,7 +65,6 @@ const reduceCategoriesRoutes = (obj, route) => {
 const reduceProductRoutes = (obj, route) => {
 
   const {page = {}, slug = {}} = route
-  const { _createdAt, _updatedAt} = page
 
   console.log(route['slug']['current'])
   const path = `${route['slug']['current']}`
@@ -77,8 +73,6 @@ const reduceProductRoutes = (obj, route) => {
     query: {
       slug: slug.current
     },
-    _createdAt,
-    _updatedAt,
     page: '/product/[Product]'
   }
   return obj
@@ -98,7 +92,7 @@ module.exports = {
     const nextRoutes = {
       ...routes.filter(({slug}) => slug.current).reduce(reduceRoutes, {}),
       ...categoriesRoutes.filter(({slug}) => slug.current).reduce(reduceCategoriesRoutes, {}),
-      ...productsRoutes.filter(({slug}) => slug.current).reduce(reduceProductRoutes, {}),
+      // ...productsRoutes.filter(({slug}) => slug.current).reduce(reduceProductRoutes, {}),
     }
 
     return nextRoutes

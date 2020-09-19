@@ -89,12 +89,12 @@ Categories.getInitialProps = async({query}) => {
 
   const mainMenu = await sanity.fetch(mainMenuQuery);
   const siteSettings = await sanity.fetch(siteSettingsQuery);
-  const footerMenu = await sanity.fetch(footerMenuQuery);
+  // const footerMenu = await sanity.fetch(footerMenuQuery);
   const categoriesInfo = await sanity.fetch(CategoriesQuery, {slug});
 
   return { 
     mainMenu,
-    footerMenu,
+    // footerMenu,
     siteSettings,
     categoriesInfo
   }
