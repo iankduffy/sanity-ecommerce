@@ -34,7 +34,7 @@ const ProductForm = ({product}) => {
   }
 
   return (
-    <div className="col-6@md col-12 u-pad-h-md u-pad-v-md">
+    <div className="col-6@md col-12 u-pad-h-sm u-pad-v-md@md">
       <div className="">
         <div className="u-dis-flex">
           {product?.tags?.map((tag, key) => <div className={``}>{tag}</div>)}
