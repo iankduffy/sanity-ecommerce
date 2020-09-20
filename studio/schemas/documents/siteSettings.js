@@ -33,5 +33,10 @@ export default {
       type: "string",
       title: "Footer text"
     },
+    {
+      name: "promotionText",
+      type: "string",
+      title: "Promotion Text"
+    }
   ]
 };

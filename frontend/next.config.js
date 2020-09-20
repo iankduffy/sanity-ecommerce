@@ -50,7 +50,7 @@ const reduceRoutes = (obj, route) => {
 
 const reduceCategoriesRoutes = (obj, route) => {
   const {page = {}, slug = {}} = route
-  console.log({slug})
+  // console.log({slug})
   const path = `${route['slug']['current']}`
   // console.log({path})
   obj[path] = {
@@ -65,10 +65,8 @@ const reduceCategoriesRoutes = (obj, route) => {
 const reduceProductRoutes = (obj, route) => {
 
   const {page = {}, slug = {}} = route
-
-  console.log(route['slug']['current'])
+  console.log(slug)
   const path = `${route['slug']['current']}`
-  // console.log({path})
   obj[path] = {
     query: {
       slug: slug.current
@@ -92,7 +90,7 @@ module.exports = {
     const nextRoutes = {
       ...routes.filter(({slug}) => slug.current).reduce(reduceRoutes, {}),
       ...categoriesRoutes.filter(({slug}) => slug.current).reduce(reduceCategoriesRoutes, {}),
-      // ...productsRoutes.filter(({slug}) => slug.current).reduce(reduceProductRoutes, {}),
+      ...productsRoutes.filter(({slug}) => slug.current).reduce(reduceProductRoutes, {}),
     }
 
     return nextRoutes

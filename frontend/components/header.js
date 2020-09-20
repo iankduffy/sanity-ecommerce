@@ -1,34 +1,29 @@
 import Link from 'next/link';
 import Nav from './nav';
-// import DropDown from './dropdown'
-// import MenuIcon from './icons/menu'
-// import CrossIcon from './icons/cross'
-
+import MiniBag from '../components/minibag/minibag'
 import urlFor from '../lib/image';
 import {useState} from 'react'
+import SearchBar from './search'
 
 import styles from '../stylesheets/components/header.module.scss'
 
-const Header = ({mainMenu, siteLogo, logoText}) => {
-  const [mobileMenu, setMobileMenu] = useState(false)
-
+const Header = ({mainMenu, siteLogo, logoText, promotion}) => {
+  // const [mobileMenu, setMobileMenu] = useState(false)
+  const [minibagVisable, setMinibagVisable] = useState(false)
+  // console.log(promotion)
   return ( 
     <div>
       <div className={styles.preHeader}>
-        Promotion Text Here
+        {promotion}
       </div>
       <div className={styles.oHeader}>
         <Link href="/">
           <a><img src={urlFor(siteLogo).auto('format').width(100).url()} className={styles.oHeader__logo} alt="Site Logo"/><p>{logoText}</p></a>
         </Link>
-        <input />
-        <div>
-          {/* <Link href="/">
-            Wishlist
-          </Link> */}
-          <Link href="/">
-            Minibag
-          </Link>
+        <SearchBar />
+        <div className="u-pos-relative" onMouseEnter={() => {setMinibagVisable(true)}} onMouseLeave={() => {setMinibagVisable(false)}}>
+          <h4 className="col-12">MiniBag</h4>
+          {minibagVisable && <MiniBag />}
         </div>
       </div>
       <Nav mainMenu={mainMenu} />

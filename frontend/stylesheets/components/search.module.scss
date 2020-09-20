@@ -1,0 +1,15 @@
+@import '../module-basics.scss';
+
+.searchBar {
+  display: flex;
+  border: 1px solid #1a1c3c;
+  background-color: #fff;
+  align-items: stretch;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 300px;
+
+  input {
+    padding: 10px;
+  }
+}

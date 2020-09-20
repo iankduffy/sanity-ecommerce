@@ -17,7 +17,7 @@ const Layout = ({ children, siteSettings, mainMenu, footerMenu}) => (
         <meta name="twitter:image:alt" content={siteSettings.siteTitle}/>
       </Head>
       <div className="">
-        <Header mainMenu={mainMenu} siteLogo={siteSettings.siteLogo} />
+        <Header mainMenu={mainMenu} siteLogo={siteSettings.siteLogo} promotion={siteSettings.promotionText} />
         <main>
           {children}
         </main>
