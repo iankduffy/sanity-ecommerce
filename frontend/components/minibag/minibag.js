@@ -10,7 +10,7 @@ import EmptyShoppingBag from './emptyCart'
 const MiniBag = (props) => {
   const cartItems = props.cart
   const [state, setState] = useContext(CartContext);
-  console.log(cartItems)
+  // console.log(cartItems)
 
   const removeItem = (product) => {
     let filteredArray = cartItems.filter(cart => {
@@ -20,7 +20,7 @@ const MiniBag = (props) => {
     setState({cart: { products: filteredArray }, total: updatePrice(filteredArray) })
     Cookies.set('cart', {cart: { products: filteredArray }, total: updatePrice(filteredArray) })
   }
-  console.log(props)
+  // console.log(props)
   return (
     <div className={styles.minibag}>
       <p className={styles.heading}>Your Current Total £{state.total}</p>

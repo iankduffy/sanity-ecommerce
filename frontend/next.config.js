@@ -65,7 +65,7 @@ const reduceCategoriesRoutes = (obj, route) => {
 const reduceProductRoutes = (obj, route) => {
 
   const {page = {}, slug = {}} = route
-  console.log(slug)
+  // console.log(slug)
   const path = `${route['slug']['current']}`
   obj[path] = {
     query: {

@@ -6,7 +6,7 @@ import urlFor from '../../lib/image';
 import ProductForm from '../../components/pdp/product-form'
 
 const ProductPage = ({mainMenu, siteSettings, footerMenu, productInfo}) => {
-  console.log(productInfo)
+  // console.log({productInfo})
   return (
   <Layout mainMenu={mainMenu} siteSettings={siteSettings} footerMenu={footerMenu}>
     <div className="u-dis-flex u-mar-v-md u-mar-h-md">
@@ -49,18 +49,17 @@ const ProductQuery = `*[_type == "product" && slug.current == $slug] {
 ProductPage.getInitialProps = async ({query}) => {
   let slug = `/product/${query.Product}`
   slug = slug.toLowerCase()
-  console.log({query})
+  // console.log({query})
 
   if (!query) {
     console.error('no query')
     return
   }
 
+  const productInfo = await sanity.fetch(ProductQuery, {slug});
   const mainMenu = await sanity.fetch(mainMenuQuery);
   const siteSettings = await sanity.fetch(siteSettingsQuery);
   const footerMenu = await sanity.fetch(footerMenuQuery);
-  const productInfo = await sanity.fetch(ProductQuery, {slug});
-
 
   return { 
     mainMenu,

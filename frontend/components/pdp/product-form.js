@@ -6,7 +6,6 @@ import Cookies from 'js-cookie'
 // import { updatePrice } from '../../lib/cart-calucations'
 
 const VariantsSelect = ({allVariants}) => {
-  console.log(allVariants)
   return (
     <div>
       {allVariants.map((variant, key) => 
@@ -33,9 +32,9 @@ const ProductForm = ({product}) => {
   return (
     <div className="col-12">
       <div className="">
-        <h3>{product.title}</h3>
+        <h3>{product?.title}</h3>
         <p>{product?.blurb?.en}</p>
-        <p>£{product.defaultProductVariant.price}</p>
+        <p>£{product?.defaultProductVariant.price}</p>
 
         {product?.variants && 
         <div>
