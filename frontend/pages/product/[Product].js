@@ -9,12 +9,12 @@ const ProductPage = ({mainMenu, siteSettings, footerMenu, productInfo}) => {
   console.log(productInfo)
   return (
   <Layout mainMenu={mainMenu} siteSettings={siteSettings} footerMenu={footerMenu}>
-    <div className="u-dis-flex u-mar-v-md container">
-      <img src={urlFor(productInfo.defaultProductVariant.images[0]).height(400).width(500).auto('format').url()} />
+    <div className="u-dis-flex u-mar-v-md u-mar-h-md">
+      <img src={urlFor(productInfo?.defaultProductVariant?.images[0]).height(400).width(500).auto('format').url()} />
       <ProductForm product={productInfo} />
     </div>
     <div className="u-dis-flex u-mar-v-md container">
-      
+
     </div>
   </Layout>
   )

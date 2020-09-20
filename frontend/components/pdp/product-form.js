@@ -5,44 +5,29 @@ import Cookies from 'js-cookie'
 // import { WishlistContext } from '../../components/product-listing/context/wishlist-context'
 // import { updatePrice } from '../../lib/cart-calucations'
 
-const VarientsSelect = () => {
+const VariantsSelect = ({allVariants}) => {
+  console.log(allVariants)
   return (
-    <div></div>
+    <div>
+      {allVariants.map((variant, key) => 
+      <label>
+        {variant.title} 
+        <input name="variant" type="radio"/>
+      </label> )}
+    </div>
   )
 }
 
 
 const ProductForm = ({product}) => {
-  console.log({product})
   const [state, setState] = useContext(CartContext);
+
   // const [wishlist, setWishlist] = useContext(WishlistContext);
   // let selectedQTY = 1
   // let alreadyInCart = state.cart.products.find((cartItem) => cartItem.productId === product.id)
 
   let addToCart = () => {
-    // // console.log({state})
-    // if (alreadyInCart) {
-    //   // console.log("in cart")
-    //   mergeItem(alreadyInCart)
-    // } else {
-    //   let newProduct = {
-    //     productId: product.id,
-    //     qty: parseInt(selectedQTY),
-    //     singlePrice: product.price 
-    //   }
-
-    //   let newProductList = [...state.cart.products, newProduct]
-    //   setState({cart: { products: newProductList }, total: updatePrice(newProductList) })
-    //   Cookies.set('cart', {cart: { products: newProductList }, total: updatePrice(newProductList) })
-    // }
-  }
-
-  let mergeItem = (cartItem) => {
-    cartItem.qty = Math.min((cartItem.qty + selectedQTY), 12)
-    let newProductList = [...state.cart.products]
-    
-    setState({cart: { products: newProductList}, total: updatePrice(newProductList)})
-    Cookies.set('cart', {cart: { products: newProductList}, total: updatePrice(newProductList)})
+  
   }
 
   return (
@@ -50,9 +35,11 @@ const ProductForm = ({product}) => {
       <div className="">
         <h3>{product.title}</h3>
         <p>{product?.blurb?.en}</p>
+        <p>£{product.defaultProductVariant.price}</p>
+
         {product?.variants && 
         <div>
-          
+          <VariantsSelect allVariants={[product?.defaultProductVariant, ...product?.variants]}/>
         </div>
         }
         <div className="col-12"> 

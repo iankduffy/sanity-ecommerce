@@ -14,8 +14,9 @@ const Categories = ({mainMenu, siteSettings, footerMenu, categoriesInfo}) => {
 
   useEffect(() => {
     setLoaded(false)
+    let id = categoriesInfo?._id
+
     async function fetchData() {
-      let id = categoriesInfo._id
       return await sanity.fetch(CategoriesProductQuery, {id}).then(res => {
         setLoaded(true)
         setProductData(res)
@@ -91,6 +92,7 @@ Categories.getInitialProps = async({query}) => {
   const siteSettings = await sanity.fetch(siteSettingsQuery);
   // const footerMenu = await sanity.fetch(footerMenuQuery);
   const categoriesInfo = await sanity.fetch(CategoriesQuery, {slug});
+  console.log({categoriesInfo})
 
   return { 
     mainMenu,
