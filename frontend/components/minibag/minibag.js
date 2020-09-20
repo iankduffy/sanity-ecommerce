@@ -7,7 +7,6 @@ import styles from '../../stylesheets/components/minibag.module.scss'
 import EmptyShoppingBag from './emptyCart'
 import MiniBagItem from './minibagItem'
 
-
 const MiniBag = () => {
   const [state, setState] = useContext(CartContext);
 

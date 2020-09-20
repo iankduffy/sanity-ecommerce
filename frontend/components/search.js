@@ -14,10 +14,9 @@ const SearchQuery = `
 `
 
 const SearchItem = ({product}) => {
-  console.log(product)
   return (
     <Link href={product.slug.current}>
-      <a className="u-dis-flex u-mar-v-sm u-pad-h-sm">
+      <a className={`u-dis-flex u-pad-v-sm u-pad-h-sm ${styles.searchItem}`}>
         <img src={urlFor(product.defaultProductVariant.images[0]).height(100).width(90).auto('format').url()} />
         <div className="u-pad-h-sm">
           <p>{product.title}</p>
@@ -46,7 +45,7 @@ const SearchBar = () => {
   return ( 
     <form className={styles.searchBar}>
       <input id="searchBar" value={query} onChange={(e) => setQuery(e.target.value)}/>
-      <button >SE</button>
+      <button >Search</button>
       {products && query.length > 2 && <div className={styles.searchItemsContainer}>
         {products.map((product, key) => <SearchItem key={key} product={product}/>)}
       </div>}

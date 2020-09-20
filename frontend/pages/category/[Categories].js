@@ -5,7 +5,7 @@ import sanity from '../../lib/sanity';
 // import RenderSections from '../../components/renderSections';
 import ProductListings from '../../components/plp/productListing';
 import ProductFilters from '../../components/plp/filters';
-
+import styles from '../../stylesheets/components/product/productListing.module.scss'
 
 
 const Categories = ({mainMenu, siteSettings, footerMenu, categoriesInfo}) => {
@@ -31,7 +31,7 @@ const Categories = ({mainMenu, siteSettings, footerMenu, categoriesInfo}) => {
 
   return (
   <Layout mainMenu={mainMenu} siteSettings={siteSettings} footerMenu={footerMenu}>
-    <div className="u-dis-flex">
+    <div className={styles.plpContainer}>
       <ProductFilters/> 
       {loaded ? <ProductListings productsData={productData} /> : 'loading'}
     </div>

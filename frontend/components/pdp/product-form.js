@@ -17,7 +17,6 @@ const VariantsSelect = ({allVariants, currentVariant, setVariant}) => {
   )
 }
 
-
 const ProductForm = ({product}) => {
   const [state, setState] = useContext(CartContext);
   const [currentVariant, setCurrentVariant] = useState(product.defaultProductVariant)
