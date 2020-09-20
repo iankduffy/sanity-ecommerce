@@ -2,16 +2,17 @@ import { useContext, useState } from 'react';
 import { CartContext } from '../context/cart-context'
 // import DropDown from "../dropdown-input"
 import Cookies from 'js-cookie' 
-// import { WishlistContext } from '../../components/product-listing/context/wishlist-context'
-// import { updatePrice } from '../../lib/cart-calucations'
+import styles from '../../stylesheets/components/product/productPage.module.scss'
 
-const VariantsSelect = ({allVariants}) => {
+const VariantsSelect = ({allVariants, currentVariant, setVariant}) => {
+  // const [selected, setSelected] = useState(allVariants[0].title)
+
   return (
-    <div>
+    <div className={styles.variantContainer}>
       {allVariants.map((variant, key) => 
-      <label>
+      <label key={key} className={`${styles.variant} ${(currentVariant.title == variant.title) ? styles.checked : ''}`}>
         {variant.title} 
-        <input name="variant" type="radio"/>
+        <input className="u-hidden" name="variant" type="radio" checked={() => currentVariant.title === variant.title} value={variant.title} onChange={() => setVariant(variant)}/>
       </label> )}
     </div>
   )
@@ -20,6 +21,7 @@ const VariantsSelect = ({allVariants}) => {
 
 const ProductForm = ({product}) => {
   const [state, setState] = useContext(CartContext);
+  const [currentVariant, setCurrentVariant] = useState(product.defaultProductVariant)
 
   // const [wishlist, setWishlist] = useContext(WishlistContext);
   // let selectedQTY = 1
@@ -30,19 +32,22 @@ const ProductForm = ({product}) => {
   }
 
   return (
-    <div className="col-12">
+    <div className="col-12 col-6@md container">
       <div className="">
+        <div className="u-dis-flex">
+          {product?.tags?.map((tag, key) => <div className={``}>{tag}</div>)}
+        </div>
         <h3>{product?.title}</h3>
         <p>{product?.blurb?.en}</p>
-        <p>£{product?.defaultProductVariant.price}</p>
+        <p>£{currentVariant.price}</p>
 
         {product?.variants && 
-        <div>
-          <VariantsSelect allVariants={[product?.defaultProductVariant, ...product?.variants]}/>
+        <div className='u-dis-block'>
+          <VariantsSelect allVariants={[product?.defaultProductVariant, ...product?.variants]} currentVariant={currentVariant} setVariant={setCurrentVariant}/>
         </div>
         }
-        <div className="col-12"> 
-          <button className="c-btn-product c-btn--dark" onClick={() => addToCart()}>Add To Bag</button>
+        <div className="col-12 u-dis-block"> 
+          <button className={styles.addToBagButton} onClick={() => addToCart()}>Add To Bag</button>
         </div>
       </div>
     </div>

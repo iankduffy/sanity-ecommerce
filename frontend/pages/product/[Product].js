@@ -10,7 +10,7 @@ const ProductPage = ({mainMenu, siteSettings, footerMenu, productInfo}) => {
   return (
   <Layout mainMenu={mainMenu} siteSettings={siteSettings} footerMenu={footerMenu}>
     <div className="u-dis-flex u-mar-v-md u-mar-h-md">
-      <img src={urlFor(productInfo?.defaultProductVariant?.images[0]).height(400).width(500).auto('format').url()} />
+      <img src={urlFor(productInfo?.defaultProductVariant?.images[0]).height(400).width(500).auto('format').url()} className="col-5"/>
       <ProductForm product={productInfo} />
     </div>
     <div className="u-dis-flex u-mar-v-md container">
