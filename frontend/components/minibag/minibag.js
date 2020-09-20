@@ -5,12 +5,13 @@ import { CartContext } from '../context/cart-context'
 import Cookies from 'js-cookie';
 import styles from '../../stylesheets/components/minibag.module.scss'
 import EmptyShoppingBag from './emptyCart'
+import MiniBagItem from './minibagItem'
 
 
-const MiniBag = (props) => {
-  const cartItems = props.cart
+const MiniBag = () => {
   const [state, setState] = useContext(CartContext);
-  // console.log(cartItems)
+
+  console.log(state.cart.products)
 
   const removeItem = (product) => {
     let filteredArray = cartItems.filter(cart => {
@@ -24,9 +25,9 @@ const MiniBag = (props) => {
   return (
     <div className={styles.minibag}>
       <p className={styles.heading}>Your Current Total £{state.total}</p>
-      {cartItems ?
-      <div className="o-dropdown--container u-pad-h-sm u-pad-v-sm">
-        {/* {cartItems.map((product, i) => <MiniBagItem product={product} key={i} removeItem={removeItem}/>) } */}
+      {state.cart.products.length ?
+      <div className="u-pad-h-sm">
+        {state.cart.products.map((product, i) => <MiniBagItem lineitem={product}/>) }
       </div> 
       : <EmptyShoppingBag />
       }

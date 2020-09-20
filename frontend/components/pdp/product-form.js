@@ -5,7 +5,6 @@ import Cookies from 'js-cookie'
 import styles from '../../stylesheets/components/product/productPage.module.scss'
 
 const VariantsSelect = ({allVariants, currentVariant, setVariant}) => {
-  // const [selected, setSelected] = useState(allVariants[0].title)
 
   return (
     <div className={styles.variantContainer}>
@@ -23,16 +22,20 @@ const ProductForm = ({product}) => {
   const [state, setState] = useContext(CartContext);
   const [currentVariant, setCurrentVariant] = useState(product.defaultProductVariant)
 
-  // const [wishlist, setWishlist] = useContext(WishlistContext);
-  // let selectedQTY = 1
-  // let alreadyInCart = state.cart.products.find((cartItem) => cartItem.productId === product.id)
-
   let addToCart = () => {
-  
+    let newProduct = {
+      defaultImage: product.defaultProductVariant.images[0],
+      productTitle: product?.title,
+      lineitem: {...currentVariant}
+    }
+
+    let newProductList = [...state.cart.products, newProduct]
+    setState({cart: { products: newProductList }})
+    Cookies.set('cart', {cart: { products: newProductList }})
   }
 
   return (
-    <div className="col-12 col-6@md container">
+    <div className="col-6@md col-12 u-pad-h-md u-pad-v-md">
       <div className="">
         <div className="u-dis-flex">
           {product?.tags?.map((tag, key) => <div className={``}>{tag}</div>)}
@@ -40,7 +43,6 @@ const ProductForm = ({product}) => {
         <h3>{product?.title}</h3>
         <p>{product?.blurb?.en}</p>
         <p>£{currentVariant.price}</p>
-
         {product?.variants && 
         <div className='u-dis-block'>
           <VariantsSelect allVariants={[product?.defaultProductVariant, ...product?.variants]} currentVariant={currentVariant} setVariant={setCurrentVariant}/>

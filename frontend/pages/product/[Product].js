@@ -4,17 +4,19 @@ import groq from 'groq'
 import sanity from '../../lib/sanity';
 import urlFor from '../../lib/image';
 import ProductForm from '../../components/pdp/product-form'
+import Block from '../../lib/blockContent'
+
 
 const ProductPage = ({mainMenu, siteSettings, footerMenu, productInfo}) => {
-  // console.log({productInfo})
+  console.log({productInfo})
   return (
   <Layout mainMenu={mainMenu} siteSettings={siteSettings} footerMenu={footerMenu}>
-    <div className="u-dis-flex u-mar-v-md u-mar-h-md">
-      <img src={urlFor(productInfo?.defaultProductVariant?.images[0]).height(400).width(500).auto('format').url()} className="col-5"/>
+    <div className="u-dis-flex u-mar-v-md">
+      <img src={urlFor(productInfo?.defaultProductVariant?.images[0]).height(400).width(500).auto('format').url()} className="col-6@md col-12"/>
       <ProductForm product={productInfo} />
     </div>
-    <div className="u-dis-flex u-mar-v-md container">
-
+    <div className="u-dis-flex u-mar-h-md">
+      <Block className="col-6@md col-12" blocks={productInfo?.body.en} />
     </div>
   </Layout>
   )
