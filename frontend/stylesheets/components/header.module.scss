@@ -26,11 +26,19 @@
 }
 
 .nav {  
+  margin: 0 auto;
+  padding: 10px;
+  background: #fff;
+  width: 100vw;
+  min-height: 30px;
+  margin: 2rem;
+}
+
+.searchContainer {
   border-top: 1px solid #333;
   border-bottom: 1px solid #333;
   margin: 0 auto;
   padding: 10px;
   background: #fff;
   width: 100vw;
-  min-height: 30px;
 }

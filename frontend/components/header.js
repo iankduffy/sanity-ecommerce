@@ -8,9 +8,8 @@ import SearchBar from './search'
 import styles from '../stylesheets/components/header.module.scss'
 
 const Header = ({mainMenu, siteLogo, logoText, promotion}) => {
-  // const [mobileMenu, setMobileMenu] = useState(false)
   const [minibagVisable, setMinibagVisable] = useState(false)
-  // console.log(promotion)
+
   return ( 
     <div>
       <div className={styles.preHeader}>
@@ -20,13 +19,15 @@ const Header = ({mainMenu, siteLogo, logoText, promotion}) => {
         <Link href="/">
           <a><img src={urlFor(siteLogo).auto('format').width(100).url()} className={styles.oHeader__logo} alt="Site Logo"/><p>{logoText}</p></a>
         </Link>
-        <SearchBar />
+        <Nav mainMenu={mainMenu} />
         <div className="u-pos-relative" onMouseEnter={() => {setMinibagVisable(true)}} onMouseLeave={() => {setMinibagVisable(false)}}>
           <h4 className="col-12">MiniBag</h4>
           {minibagVisable && <MiniBag />}
         </div>
       </div>
-      <Nav mainMenu={mainMenu} />
+      <div className={styles.searchContainer}>
+        <SearchBar />
+      </div>
     </div>
   )
 }
