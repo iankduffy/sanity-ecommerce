@@ -25,6 +25,20 @@ const Header = ({mainMenu, siteLogo, logoText, promotion}) => {
           {minibagVisable && <MiniBag />}
         </div>
       </div>
+      <div className={styles.mobileHeader}>
+        <Link href="/">
+          <p>Home</p>
+        </Link>
+        <Link href="/">
+          <p>Menu</p>
+        </Link>
+        <Link href="/">
+          <p>Search</p>         
+        </Link>
+        <Link href="/">
+          <p>My Bag</p>         
+        </Link>
+      </div>
       <div className={styles.searchContainer}>
         <SearchBar />
       </div>

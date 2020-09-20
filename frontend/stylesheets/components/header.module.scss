@@ -4,14 +4,37 @@
   background: #fff;
   width: 100vw;
   max-height: 80px;
-  display: flex; 
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 30px;
+  display: none;
 
-  &__logo {
-    max-height: 60px;
+  @include breakpoint-min(md) { 
+    position: relative;
+    top: 0;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+      
+    &__logo {
+      max-height: 60px;
+    }
   }
+}
+
+.mobileHeader {
+  display: none;
+  @include breakpoint-max(md) { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr);
+    background: #fff;
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+    min-height: 40px;
+    text-align: center;
+    padding: 20px;
+  }
+
 }
 
 .preHeader {
