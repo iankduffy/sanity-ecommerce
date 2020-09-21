@@ -16,7 +16,7 @@ const ArticleLink = ({page}) => {
   return (
     <Link href={page[0].route} >
       <a className={styles.article}>
-        <img src={urlFor(page[0].image).width(400).auto('format').url()} alt=""/>
+        <img loading="lazy" src={urlFor(page[0].image).width(400).auto('format').url()} alt=""/>
         <h3 className="h4">{page[0].title}</h3>
       </a>
     </Link>

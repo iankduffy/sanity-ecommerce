@@ -17,7 +17,7 @@ const SearchItem = ({product}) => {
   return (
     <Link href={product.slug.current}>
       <a className={`u-dis-flex u-pad-v-sm u-pad-h-sm ${styles.searchItem}`}>
-        <img src={urlFor(product.defaultProductVariant.images[0]).height(100).width(90).auto('format').url()} />
+        <img loading="lazy" src={urlFor(product.defaultProductVariant.images[0]).height(100).width(90).auto('format').url()} />
         <div className="u-pad-h-sm">
           <p>{product.title}</p>
           <p>£{product.defaultProductVariant.price}</p> 

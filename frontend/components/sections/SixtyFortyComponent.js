@@ -8,7 +8,7 @@ const SixtyFortyComponent = ({image, blockContent}) => {
   return (
     <section className={styles.container}>
       <Block className={styles.image} blocks={blockContent} />
-      <img className={styles.image} srcSet={srcSet(image, 700)} src={urlFor(image).width(700).auto('format')} alt=""/>
+      <img className={styles.image} loading="lazy" srcSet={srcSet(image, 700)} src={urlFor(image).width(700).auto('format')} alt=""/>
     </section>
   )
 }
