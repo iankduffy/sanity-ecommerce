@@ -4,7 +4,7 @@ import MiniBag from '../components/minibag/minibag'
 import urlFor from '../lib/image';
 import {useState} from 'react'
 import SearchBar from './search'
-
+import MobileNav from './mobileNav'
 import styles from '../stylesheets/components/header.module.scss'
 
 const Header = ({mainMenu, siteLogo, logoText, promotion}) => {
@@ -25,20 +25,7 @@ const Header = ({mainMenu, siteLogo, logoText, promotion}) => {
           {minibagVisable && <MiniBag />}
         </div>
       </div>
-      <div className={styles.mobileHeader}>
-        <Link href="/">
-          <p>Home</p>
-        </Link>
-        <Link href="/">
-          <p>Menu</p>
-        </Link>
-        <Link href="/">
-          <p>Search</p>         
-        </Link>
-        <Link href="/">
-          <p>My Bag</p>         
-        </Link>
-      </div>
+      <MobileNav />
       <div className={styles.searchContainer}>
         <SearchBar />
       </div>

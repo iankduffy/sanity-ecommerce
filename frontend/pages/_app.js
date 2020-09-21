@@ -1,4 +1,3 @@
-import '../styles/globals.css'
 import '../stylesheets/stylesheets/styles.scss'
 import { CartContextProvider } from '../components/context/cart-context';
 
