@@ -1,13 +1,14 @@
 import {useState, useEffect} from 'react'
-import srcSet from '../lib/srcset'
 
-const ProgressImage = ({imageUrl, previewUrl, alt}) => {
+const ProgressImage = ({imageUrl, previewUrl, alt, srcSetImages}) => {
   const [src, setSrc] = useState(previewUrl)
+  const [loaded, setLoading] = useState(false)
 
   useEffect(() => {
     const imageToLoad = new Image()
 
     imageToLoad.onload = () => {
+      setLoading(true)
       setSrc(imageUrl)
     }
     imageToLoad.src = imageUrl
@@ -15,7 +16,7 @@ const ProgressImage = ({imageUrl, previewUrl, alt}) => {
   }, [imageUrl])
   
   return ( 
-    <img className='col-12' src={src} alt={alt}/>
+    <img className='col-12' src={src} srcSet={loaded ? srcSetImages : ''} alt={alt}/>
   )
 }
 
