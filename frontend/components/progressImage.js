@@ -8,8 +8,8 @@ const ProgressImage = ({imageUrl, previewUrl, alt, srcSetImages}) => {
     const imageToLoad = new Image()
 
     imageToLoad.onload = () => {
-      setLoading(true)
-      setSrc(imageUrl)
+      // setLoading(true)
+      // setSrc(imageUrl)
     }
     imageToLoad.src = imageUrl
 

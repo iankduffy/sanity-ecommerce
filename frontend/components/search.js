@@ -43,9 +43,9 @@ const SearchBar = () => {
   }, [query])
 
   return ( 
-    <form className={styles.searchBar}>
-      <input id="searchBar" value={query} onChange={(e) => setQuery(e.target.value)}/>
-      <button >Search</button>
+    <form className={styles.searchBar} action="/search">
+      <input placeholder="Search ie Trainers" id="searchBar" value={query} onChange={(e) => setQuery(e.target.value)}/>
+      <button>Search</button>
       {products && query.length > 2 && <div className={styles.searchItemsContainer}>
         {products.map((product, key) => <SearchItem key={key} product={product}/>)}
       </div>}

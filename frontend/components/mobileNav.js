@@ -8,7 +8,9 @@ const MobileNav = ({mainMenu}) => {
   return ( 
     <div className={styles.mobileHeader}>
       <Link href="/">
-        <p>Home</p>
+        <a>
+          <p>Home</p>
+        </a>
       </Link>
       <div>
         <p>Menu</p>

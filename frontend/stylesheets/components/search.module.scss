@@ -2,22 +2,24 @@
 
 .searchBar {
   display: flex;
-  border: 1px solid #1a1c3c;
+  width: 100%;
   background-color: #fff;
   align-items: stretch;
   border-radius: 5px;
-  width: 70%;
-  margin: 0 auto;
+  max-width: 600px;
+  margin: 0 1rem;
 
   position: relative;
 
   input {
     padding: 10px;
+    width: 100%;
   }
 
   button {
     background: $primary-color;
     color: $white;
+    max-width: 100px
   }
 }
 

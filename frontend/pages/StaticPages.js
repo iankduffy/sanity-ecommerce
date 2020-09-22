@@ -19,9 +19,12 @@ const siteSettingsQuery = `*[_type == "siteSettings"][0] {
 
 const mainMenuQuery = `*[_type == "nav" && id == "main-menu"][0] {
 	navItems[] {
-   text,
-   "item": page[] {
-			...,
+    mainpage {
+      title,
+      "route": route->slug.current
+    },
+  "item": dropdownNav[] {
+			title,
     	"slug": route->slug
     },
  	}
