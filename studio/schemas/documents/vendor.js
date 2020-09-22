@@ -26,6 +26,11 @@ export default {
       name: 'description',
       title: 'Description',
       type: 'blockContent'
+    },
+    {
+      name: 'shippingDays',
+      title: 'shippingDays',
+      type: 'string'
     }
   ],
   preview: {

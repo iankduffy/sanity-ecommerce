@@ -16,7 +16,7 @@ const ProgressImage = ({imageUrl, previewUrl, alt, srcSetImages}) => {
   }, [imageUrl])
   
   return ( 
-    <img className='col-12' src={src} srcSet={loaded ? srcSetImages : ''} alt={alt}/>
+    <img className='col-12' src={src} srcSet={srcSetImages} alt={alt}/>
   )
 }
 
