@@ -7,7 +7,7 @@ const HomeSplashScreen = ({heading = '', backgroundImage, tagline ='', id = ''})
 
   return(
   <section id={id} className={styles.hero}>
-    <img alt={heading} className="col-12" src={urlFor(backgroundImage).width(500).auto('format').url()} srcSet={srcSet(backgroundImage, 1800)} />
+    <img alt={heading} className="col-12" src={urlFor(backgroundImage).width(500).quality(80).auto('format').url()} srcSet={srcSet(backgroundImage, 1800)} />
     <div className={styles.hero__text}>
       <h1 className="">{heading}</h1>
       <p className="">{tagline}</p>

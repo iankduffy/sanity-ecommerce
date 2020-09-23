@@ -49,7 +49,7 @@ const mainMenuQuery = `*[_type == "nav" && id == "main-menu"][0] {
       title,
       "route": route->slug.current
     },
-  "item": dropdownNav[] {
+  "dropdown": dropdownNav[] {
 			title,
     	"slug": route->slug
     },
