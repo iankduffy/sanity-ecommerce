@@ -8,47 +8,51 @@ export default {
       title: 'Main Page Link',
       description: 'Select the main page link for this navigation item',
       type: 'object',
-      fields: [{
-              name: "route",
-              type: 'reference',
-              to: [
-                {type: 'routes'},
-                {type: 'category'},
-              ],
-            },
-            {
-              name: 'title',
-              type: 'string',
-              title: 'Text for Link',
-            },
-           ] 
-        }, 
+      fields: 
+      [
         {
-            name: 'dropdownNav',
-            title: 'Drop Down Navigation',
-            description: 'These Pages will appear in a drop down',
-            type: 'array',
-            of: [{
-                type: 'object',
-                name: "items",
-                fields: [
-                  {
-                    name: "route",
-                    type: 'reference',
-                    to: [
-                      {type: 'routes'},
-                      {type: 'category'},
-                    ],
-                  },{
-                    name: 'title',
-                    type: 'string',
-                    title: 'Text for Link',
-                  },
-                ]
-              }
-          ]
-        }
-      ], 
+          name: "route",
+          type: 'reference',
+          to: [
+            {type: 'routes'},
+            {type: 'category'},
+          ],
+        },
+        {
+          name: 'title',
+          type: 'string',
+          title: 'Text for Link',
+        },
+      ]
+    }, 
+    {
+        name: 'dropdownNav',
+        title: 'Drop Down Navigation',
+        description: 'These Pages will appear in a drop down',
+        type: 'array',
+        of: 
+        [
+          {
+            type: 'object',
+            name: "items",
+            fields: [
+              {
+                name: "route",
+                type: 'reference',
+                to: [
+                  {type: 'routes'},
+                  {type: 'category'},
+                ],
+              },{
+                name: 'title',
+                type: 'string',
+                title: 'Text for Link',
+              },
+            ]
+          }
+        ]
+      }
+    ], 
     preview: {
       select: {
         title: 'mainpage.title'

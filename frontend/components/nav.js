@@ -9,7 +9,7 @@ const Nav = ({mainMenu}) => {
     <div className={styles.nav}>
       <nav className="">
         {mainMenu?.navItems?.map((menu, key) => 
-          <NavItem navTitle={menu?.mainpage?.title} navRoute={menu?.mainpage?.route} navDropDown={menu.dropdown} />
+          <NavItem key={key}  navTitle={menu?.mainpage?.title} navRoute={menu?.mainpage?.route} navDropDown={menu.dropdown} />
           
           // <Link key={key} href={{pathname:menu.mainpage?.route.current}}> 
           //   <a className="o-nav--item o-header__link u-pad-v-md">{menu?.mainpage?.title}</a>

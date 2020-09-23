@@ -5,18 +5,20 @@ import {useState} from 'react'
 
 const DropDown = ({dropdownNav}) => { 
   return ( 
-    <div className="h1">Drop Down</div>
+    <div className={styles.navDropDown}>
+      <div>Drop Down</div>
+    </div>
   )
 }
 
-const NavItem = ({navTitle = '', navRoute = {}, navDropDown = []}) => { 
+const NavItem = ({navTitle = '', navRoute = {}, navDropDown = null}) => { 
   const [isDropDownOpen, setDropDownOpen] = useState(false)
-  console.log(navRoute)
+  console.log(navDropDown)
   return ( 
     <Link href={navRoute}>
-      <a onMouseEnter={() => {setDropDownOpen(true)}} onMouseLeave={() => {setDropDownOpen(false)}}> 
+      <a className='u-pos-relative' onMouseEnter={() => {setDropDownOpen(true)}} onMouseLeave={() => {setDropDownOpen(false)}}> 
         {navTitle}
-        {isDropDownOpen && <DropDown dropdownNav={navDropDown} />}
+        {isDropDownOpen && navDropDown && <DropDown dropdownNav={navDropDown} />}
       </a>
     </Link>
   )
