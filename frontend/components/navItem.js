@@ -11,7 +11,7 @@ const DropDown = ({dropdownNav}) => {
 
 const NavItem = ({navTitle = '', navRoute = {}, navDropDown = []}) => { 
   const [isDropDownOpen, setDropDownOpen] = useState(false)
-  
+  console.log(navRoute)
   return ( 
     <Link href={navRoute}>
       <a onMouseEnter={() => {setDropDownOpen(true)}} onMouseLeave={() => {setDropDownOpen(false)}}> 
