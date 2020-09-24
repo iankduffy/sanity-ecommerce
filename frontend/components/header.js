@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import Nav from './nav';
+import Nav from './navigation/nav';
 import MiniBag from '../components/minibag/minibag'
 import urlFor from '../lib/image';
 import {useState} from 'react'
 import SearchBar from './search'
-import MobileNav from './mobileNav'
+import MobileNav from './navigation/mobileNav'
 import styles from '../stylesheets/components/header.module.scss'
 
 const Header = ({mainMenu, siteLogo, logoText, promotion}) => {

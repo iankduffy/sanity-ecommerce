@@ -25,8 +25,9 @@ const mainMenuQuery = `*[_type == "nav" && id == "main-menu"][0] {
     },
   "dropdown": dropdownNav[] {
 			title,
-    	"slug": route->slug
+      "slug": route->slug, 
     },
+    navContent
  	}
 }`
 
