@@ -20,6 +20,8 @@ import hero from './objects/hero'
 import tabsComponents from './objects/tabsComponents'
 import inspirationComponent from './objects/inspirationComponent'
 import sixtyFortyComponent from './objects/sixtyFortyComponet'
+import articleLink from './objects/navComponents/articleLink'
+
 
 import localeString from './locale/String'
 import localeText from './locale/Text'
@@ -35,6 +37,7 @@ export default createSchema({
   types: schemaTypes.concat([
     // The following are document types which will appear
     // in the studio.
+    articleLink,
     nav,
     routes,
     siteSettings,

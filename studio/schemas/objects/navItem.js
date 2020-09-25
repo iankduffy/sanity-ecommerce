@@ -51,6 +51,14 @@ export default {
             ]
           }
         ]
+      }, 
+      {
+        name: 'navContent',
+        type: 'array',
+        title: 'Navigation Sections',
+        of: [
+          { type: 'articleLink' },
+        ],
       }
     ], 
     preview: {
