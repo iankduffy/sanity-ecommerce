@@ -3,7 +3,6 @@ import Link from 'next/link';
 import {useState} from 'react';
 import RenderSections from './renderNavComponents';
 
-
 const DropDownItem = ({link}) => {
   return (
     <Link href={link?.slug?.current}>
@@ -33,7 +32,7 @@ const NavItem = ({navTitle = '', navRoute = {}, navDropDown = null, navContent})
 
   return ( 
     <Link href={navRoute}>
-      <div className='u-pos-relative u-pad-v-md u-pad-h-md' onMouseEnter={() => {setDropDownOpen(true)}} onMouseLeave={() => {setDropDownOpen(false)}}>
+      <div className='u-pad-v-md u-pad-h-md' onMouseEnter={() => {setDropDownOpen(true)}} onMouseLeave={() => {setDropDownOpen(false)}}>
         <a className=""> 
           {navTitle}
         </a>

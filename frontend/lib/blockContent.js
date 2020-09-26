@@ -1,6 +1,6 @@
 import BlockContent from '@sanity/block-content-to-react'
 
-const Block = ({blocks = '', dataset = 'production', projectId = 'dtpigcyg', className = '', imageOptions = {w: 1000, h: 1000, fit: 'max', auto: 'format'}}) => {
+const Block = ({blocks = '', dataset = 'production', projectId = 'phinh7i9', className = '', imageOptions = {w: 1000, h: 1000, fit: 'max', auto: 'format'}}) => {
   const serializers = {
     types: {
       blockButton: ({node}) => (

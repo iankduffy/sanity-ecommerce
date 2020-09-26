@@ -50,10 +50,9 @@
 
 .nav {  
   margin: 0 auto;
-  padding: 10px;
+  height: 100%;
   width: 100vw;
   min-height: 30px;
-  margin: 2rem;
   display: flex;
   cursor: pointer;
 }
@@ -70,22 +69,22 @@
 .navDropDown {
   position: absolute; 
   left: 0;
-  top: 100%;
+  top: 90%;
   background: $white;
   padding: 10px;
-  width: 100%;
+  width: 100vw;
   display: grid;
-  grid-template-columns: 100px 200px;
+  grid-template-columns: 40% 40%;
   gap: 20px;
   cursor: pointer;
-  box-shadow: -1px 0px 7px $black; 
-  width: auto;
+  box-shadow: 5px 2px 5px $black; 
   z-index: 10;
-
+  justify-content: center;
 }
 
 .navDropDownLinks {
   display: flex;
   flex-direction: column;
   text-align: left;
+  flex-wrap: wrap;
 }
