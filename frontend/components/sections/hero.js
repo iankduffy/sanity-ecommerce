@@ -13,11 +13,11 @@ const HomeSplashScreen = ({heading = '', backgroundImage, tagline ='', id = ''})
     <Head>
       <link
         rel='preload'
-        href={urlFor(backgroundImage).width(500).quality(80).auto('format').url()}
+        href={urlFor(backgroundImage).width(400).quality(80).auto('format').url()}
         as="image"
       />
     </Head>
-    <img style={{height: '80vh'}} height="700" alt={heading} className="col-12" src={urlFor(backgroundImage).width(500).quality(80).auto('format').url()} srcSet={srcSet(backgroundImage, 1800)} />
+    <img style={{height: '80vh'}} height="700" alt={heading} className="col-12" src={urlFor(backgroundImage).width(400).quality(80).auto('format').url()} srcSet={srcSet(backgroundImage, 1800)} />
     <div className={styles.hero__text}>
       <h1 className="">{heading}</h1>
       <p className="">{tagline}</p>
