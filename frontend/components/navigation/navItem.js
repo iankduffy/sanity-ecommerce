@@ -20,7 +20,7 @@ const DropDown = ({dropdownNav, navContent}) => {
       <div className={styles.navDropDownLinks}>
         {dropdownNav.map((item, key) => <DropDownItem link={item} key={key} />)}
       </div>
-      <div>
+      <div className={styles.navContent}>
         <RenderSections sections={navContent}/>
       </div>
     </div>
