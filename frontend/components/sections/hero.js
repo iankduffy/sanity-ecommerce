@@ -17,7 +17,7 @@ const HomeSplashScreen = ({heading = '', backgroundImage, tagline ='', id = ''})
         as="image"
       />
     </Head>
-    <img style={{height: '80vh'}} height="700" alt={heading} className="col-12" src={urlFor(backgroundImage).width(400).height(700).quality(80).auto('format').url()} srcSet={srcSet(backgroundImage, 1800)} loading="eager"/>
+    <img height="700" alt={heading} className="col-12" src={urlFor(backgroundImage).width(400).height(700).quality(80).auto('format').url()} srcSet={srcSet(backgroundImage, 1800)} loading="eager"/>
     <div className={styles.hero__text}>
       <h1 className="">{heading}</h1>
       <p className="">{tagline}</p>
