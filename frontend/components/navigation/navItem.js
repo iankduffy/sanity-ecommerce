@@ -28,7 +28,7 @@ const DropDown = ({dropdownNav, navContent}) => {
 }
 
 const NavItem = ({navTitle = '', navRoute = {}, navDropDown = null, navContent}) => { 
-  const [isDropDownOpen, setDropDownOpen] = useState(true)
+  const [isDropDownOpen, setDropDownOpen] = useState(false)
 
   return ( 
     <Link href={navRoute}>
