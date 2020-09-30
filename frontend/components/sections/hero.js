@@ -5,11 +5,13 @@ import srcSet from '../../lib/srcset'
 import Head from 'next/head'
 
 
-const HomeSplashScreen = ({heading = '', backgroundImage, tagline ='', id = ''}) => {
+const HomeSplashScreen = ({heading = '', backgroundImage, tagline ='', id = '', index, ...props}) => {
+  console.log(props)
 
   return(
   
   <section id={id} className={styles.hero}>
+    {index == 0 && 
     <Head>
       <link
         rel='preload'
@@ -17,7 +19,7 @@ const HomeSplashScreen = ({heading = '', backgroundImage, tagline ='', id = ''})
         as="image"
         imagesrcset={srcSet(backgroundImage, 1800)}
       />
-    </Head>
+    </Head> }
 
     <img height="700" alt={heading} className="col-12" src={urlFor(backgroundImage).width(400).height(700).quality(80).auto('format').url()} srcSet={srcSet(backgroundImage, 1800)} loading="eager"/>
     <div className={styles.hero__text}>
