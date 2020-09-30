@@ -2,13 +2,13 @@
 
 .container {
   margin: 0px auto;
-  padding: 20px 20px;
+  
   display: flex;
   align-items: center;
   flex-direction: column;
   @include breakpoint-min(md) { 
     flex-direction: row;
-    padding: 0  60px;
+    padding: 20px 20px;
   }
 }
 
@@ -25,11 +25,10 @@
 }
 
 .blockContent {
-  width: 40%;
   margin: 10px;
   order: 2;
   @include breakpoint-min(md) { 
-    width: 100%;
+    width: 45%;
     margin: 0px 0px;
   }
 }

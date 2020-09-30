@@ -12,7 +12,7 @@ const ProductFeatures = ({blockContent, features, ...props}) => {
     <section className='u-t-cen u-mar-v-lg'>
       <Block blocks={blockContent} className="col-6@md container"/>
       <div className="container u-dis-flex u-mar-v-lg u-pad-h-md">
-        {features.map((feature, key) => <Block blocks={feature.blockContent} className=""/>)}
+        {features.map((feature, key) => <Block blocks={feature.blockContent} className="col-4"/>)}
       </div>
     </section>
   )

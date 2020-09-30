@@ -15,6 +15,7 @@ const HomeSplashScreen = ({heading = '', backgroundImage, tagline ='', id = ''})
         rel='preload'
         href={urlFor(backgroundImage).width(400).quality(80).auto('format').url()}
         as="image"
+        imagesrcset={srcSet(backgroundImage, 1800)}
       />
     </Head>
 
