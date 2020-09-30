@@ -55,6 +55,11 @@ const staticPageQuery = `*[_type == "routes" && slug.current == $slug][0] {
           "price": defaultProductVariant.price, 
         },
         ...,
+      },
+      _type == "productAddToBag" => {
+        product->{
+          ...
+        },
       }
     }
   }
@@ -75,6 +80,11 @@ const homePageQuery = `*[_type == "siteSettings"][0] {
           title, 
           "price": defaultProductVariant.price, 
         }
+      },
+      _type == "productAddToBag" => {
+        product->{
+          ...
+        },
       }
     }
   }
