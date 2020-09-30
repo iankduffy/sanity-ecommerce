@@ -73,6 +73,7 @@
 .o-flex-al-self-bottom {
   align-self: flex-end;
 }
+
 .u-flex--row-reverse {
   flex-direction: row-reverse;
 }
@@ -106,7 +107,6 @@
 
 .u-dis-flex {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .u-no-wrap {
@@ -117,4 +117,8 @@
 
 .u-vertical-center {
   align-items: center;
+}
+
+.u-flex-end {
+  justify-content: flex-end;
 }

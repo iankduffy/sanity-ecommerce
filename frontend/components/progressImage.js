@@ -1,22 +1,21 @@
 import {useState, useEffect} from 'react'
 
 const ProgressImage = ({imageUrl, previewUrl, alt, srcSetImages}) => {
-  const [src, setSrc] = useState(previewUrl)
-  const [loaded, setLoading] = useState(false)
+  // const [src, setSrc] = useState(previewUrl)
+  const [imageLoaded, setImageLoaded] = useState(false)
 
-  useEffect(() => {
-    const imageToLoad = new Image()
-
-    imageToLoad.onload = () => {
-      // setLoading(true)
-      // setSrc(imageUrl)
-    }
-    imageToLoad.src = imageUrl
-
-  }, [imageUrl])
+  console.log(imageLoaded)
   
   return ( 
-    <img className='col-12' src={src} srcSet={srcSetImages} alt={alt}/>
+    <div className="u-pos-relative">
+      <img className=' col-12' src={imageUrl} srcSet={srcSetImages} alt={alt}
+        style={{ opacity: imageLoaded ? "1" : "0" }}
+        onLoad={() => setImageLoaded(true)}
+      />
+      <img clasName='col-12 u-pos-abs' src={previewUrl} alt={alt}
+        style={{ opacity: imageLoaded ? "0" : "1" }}
+      />
+    </div>
   )
 }
 

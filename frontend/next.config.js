@@ -83,15 +83,21 @@ module.exports = {
     const categoryRoutes = await client.fetch(CategoriesQuery)
     const productRoutes = await client.fetch(ProductsQuery)
 
+
     let routes = staticRoutes.routes
     let categoriesRoutes = categoryRoutes.routes
     let productsRoutes = productRoutes.routes
+
+   
+
     
     const nextRoutes = {
       ...routes.filter(({slug}) => slug.current).reduce(reduceRoutes, {}),
       ...categoriesRoutes.filter(({slug}) => slug.current).reduce(reduceCategoriesRoutes, {}),
       ...productsRoutes.filter(({slug}) => slug.current).reduce(reduceProductRoutes, {}),
     }
+
+    console.log(nextRoutes)
 
     return nextRoutes
   }

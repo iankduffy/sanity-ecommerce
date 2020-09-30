@@ -35,6 +35,18 @@ export default {
           to: [{type: 'category'}]
         }
       ]
+    },
+    {
+      name: 'brands',
+      title: 'Vendors categories',
+      type: 'array',
+      of: [
+        {
+          type: 'string',
+          name: 'parents',
+          title: 'Parent categories',
+        }
+      ]
     }
   ]
 }

@@ -3,7 +3,6 @@ import Link from 'next/link';
 import urlFor from '../../lib/image';
 
 const Brands = () => {
-
   return (
     <div>
       <h4>Brands</h4>
@@ -32,7 +31,7 @@ const PriceRange = () => {
 
 const ProductFilters = () => {
   return ( 
-    <div className=''>
+    <div className='u-pad-h-md'>
       <PriceRange />
       <ProductTags />
       <Brands />

@@ -20,7 +20,12 @@ import hero from './objects/hero'
 import tabsComponents from './objects/tabsComponents'
 import inspirationComponent from './objects/inspirationComponent'
 import sixtyFortyComponent from './objects/sixtyFortyComponet'
+
 import articleLink from './objects/navComponents/articleLink'
+
+import productNavigation from './objects/productPageComponents/productNavigation'
+import productFeatures from './objects/productPageComponents/productFeatures'
+
 
 
 import localeString from './locale/String'
@@ -45,8 +50,10 @@ export default createSchema({
     vendor,
     category,
     pages,
+    productFeatures,
     navItem,
     hero,
+    productNavigation,
     tabsComponents,
     inspirationComponent,
     sixtyFortyComponent,

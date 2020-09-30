@@ -15,7 +15,10 @@ export default {
         { type: 'hero' },
         { type: 'tabsComponents' },
         { type: 'inspiration' }, 
-        { type: 'sixtyFortyComponent' }
+        { type: 'sixtyFortyComponent' },
+        { type: 'productNavigation' }, 
+        { type: 'productFeatures' }
+
       ],
     }
   ], 

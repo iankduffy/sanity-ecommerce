@@ -43,7 +43,19 @@ const staticPageQuery = `*[_type == "routes" && slug.current == $slug][0] {
   page-> {
     ...,
     content[] {
-      ...
+      ...,
+      _type == "inspiration" => {
+        products[]->{
+          ...
+        }
+      }, 
+      _type == "productNavigation" => {
+        product->{
+          title, 
+          "price": defaultProductVariant.price, 
+        },
+        ...,
+      }
     }
   }
 }`
@@ -57,6 +69,12 @@ const homePageQuery = `*[_type == "siteSettings"][0] {
         products[]->{
           ...
         }
+      }, 
+      _type == "productNavigation" => {
+        product->{
+          title, 
+          "price": defaultProductVariant.price, 
+        }
       }
     }
   }
@@ -65,6 +83,7 @@ const homePageQuery = `*[_type == "siteSettings"][0] {
 StaticPage.getInitialProps = async ({query}) => {
   let { slug = "" } = query
   slug = slug.toLowerCase()
+
 
   if (!query) {
     console.error('no query')
