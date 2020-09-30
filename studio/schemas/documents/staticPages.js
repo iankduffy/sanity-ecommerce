@@ -17,8 +17,8 @@ export default {
         { type: 'inspiration' }, 
         { type: 'sixtyFortyComponent' },
         { type: 'productNavigation' }, 
-        { type: 'productFeatures' }
-
+        { type: 'productFeatures' },
+        { type: 'productAddToBag' }
       ],
     }
   ], 

@@ -12,6 +12,11 @@ export default {
       }
     },
     {
+      name: 'video',
+      type: 'url',
+      title: 'Video Url',
+    }, 
+    {
       name: "blockContent",
       type: "blockContent", 
       title: "Content", 

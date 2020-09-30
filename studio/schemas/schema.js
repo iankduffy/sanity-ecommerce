@@ -25,8 +25,7 @@ import articleLink from './objects/navComponents/articleLink'
 
 import productNavigation from './objects/productPageComponents/productNavigation'
 import productFeatures from './objects/productPageComponents/productFeatures'
-
-
+import productAddToBag from './objects/productPageComponents/productAddToBag'
 
 import localeString from './locale/String'
 import localeText from './locale/Text'
@@ -51,6 +50,7 @@ export default createSchema({
     category,
     pages,
     productFeatures,
+    productAddToBag,
     navItem,
     hero,
     productNavigation,
