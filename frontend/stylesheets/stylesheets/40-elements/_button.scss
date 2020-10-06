@@ -9,4 +9,16 @@
   &:hover {
     background: #444;
   }
+
+  &--video {
+    width: 100%; 
+    text-align: center;
+    padding: 10px;
+    transition: 500ms;
+    display: block;
+    color: #1896D9;
+    &:hover {
+      color: transparentize(#1896D9, 0.2);
+    }
+  }
 }

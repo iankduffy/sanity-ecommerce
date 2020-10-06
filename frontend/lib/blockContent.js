@@ -12,7 +12,7 @@ const Block = ({blocks = '', dataset = 'production', projectId = 'phinh7i9', cla
   }
 
   return (
-    <BlockContent blocks={blocks} dataset={dataset} projectId={projectId} className={className} imageOptions={imageOptions} serializers={serializers} /> 
+    <BlockContent renderContainerOnSingleChild={true} blocks={blocks} dataset={dataset} projectId={projectId} className={className} imageOptions={imageOptions} serializers={serializers} /> 
   )
 
 }

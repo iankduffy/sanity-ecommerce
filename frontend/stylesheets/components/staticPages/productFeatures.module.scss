@@ -1,0 +1,14 @@
+@import '../../module-basics.scss';
+
+.featureContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  justify-content: center;
+  gap: 2vw;
+  margin: 50px 0;
+
+  @include breakpoint-min(md) { 
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  }
+}

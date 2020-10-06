@@ -5,4 +5,7 @@ export {default as sixtyFortyComponent} from './SixtyFortyComponent'
 export {default as productNavigation} from './productNavigation'
 export {default as productFeatures} from './productFeatures'
 export {default as productAddToBag} from './productAddToBag'
+export {default as ctaSection} from './ctaSection'
+export {default as productTabs} from './productTabs'
+export {default as fullImageWithText} from './fullImageWithText'
 

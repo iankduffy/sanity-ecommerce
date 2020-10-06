@@ -26,6 +26,9 @@ import articleLink from './objects/navComponents/articleLink'
 import productNavigation from './objects/productPageComponents/productNavigation'
 import productFeatures from './objects/productPageComponents/productFeatures'
 import productAddToBag from './objects/productPageComponents/productAddToBag'
+import productTabs from './objects/productPageComponents/productTabs'
+import ctaSection from './objects/productPageComponents/ctaSection'
+import fullImageWithText from './objects/productPageComponents/fullImageWithText'
 
 import localeString from './locale/String'
 import localeText from './locale/Text'
@@ -52,12 +55,15 @@ export default createSchema({
     productFeatures,
     productAddToBag,
     navItem,
+    productTabs,
     hero,
     productNavigation,
     tabsComponents,
     inspirationComponent,
     sixtyFortyComponent,
     blockButton,
+    fullImageWithText,
+    ctaSection,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,

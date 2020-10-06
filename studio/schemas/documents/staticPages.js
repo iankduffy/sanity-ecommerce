@@ -18,7 +18,10 @@ export default {
         { type: 'sixtyFortyComponent' },
         { type: 'productNavigation' }, 
         { type: 'productFeatures' },
-        { type: 'productAddToBag' }
+        { type: 'productAddToBag' },
+        { type: 'productTabs' },
+        { type: 'ctaSection' },
+        { type: 'fullImageWithText' },
       ],
     }
   ], 

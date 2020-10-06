@@ -1,0 +1,15 @@
+@import '../../module-basics.scss';
+
+.ctaContainer {
+  padding: 20px;
+  background: #F0F0F0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  justify-content: center;
+  align-items: center;
+
+  @include breakpoint-min(md) { 
+    grid-template-columns: 45vw 25vw;
+  }
+}

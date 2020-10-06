@@ -5,8 +5,10 @@ const ProductNavigation = ({product, tabs = []}) => {
   return (
     <section className={styles.productNav}>
       <p className='h4'>{product.title}</p>
-      <div className="u-dis-flex u-pad-h-md">
-        {tabs.map((tab, key) => <button>{tab.text}</button>)}
+      <div className={styles.productNav__tabs}>
+        {tabs.map((tab, key) => 
+          <a className={styles.tab}>{tab.text}</a>
+        )}
       </div>
       <div className="u-dis-flex u-vertical-center u-flex-end"> 
         <p className="u-mar-b-0">£{product.price}</p>

@@ -16,6 +16,7 @@
   width: 100%; 
   order: 1;
   margin: 10px;
+  position: relative;
   
   @include breakpoint-min(md) { 
     order: 2;
