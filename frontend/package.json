@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.7",
+    "@sanity/client": "^2.10.5",
     "express": "^4.17.1",
     "groq": "^1.150.1",
     "js-cookie": "^2.2.1",
