@@ -2,6 +2,7 @@ import Link from 'next/link';
 // import MiniBag from '../components/minibag/minibag'
 import urlFor from '../../lib/image';
 import {useState} from 'react'
+import styles from '../shared/header/header.module.scss'
 // import styles from '../../stylesheets/components/header.module.scss'
 
 const Header = ({mainMenu, siteLogo, logoText, promotion = ""}) => {
