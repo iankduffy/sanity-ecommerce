@@ -1,4 +1,4 @@
-import styles from '../../stylesheets/components/header.module.scss'
+import styles from '../shared/header/header.module.scss'
 import NavItem from './navItem'
 
 const Nav = ({mainMenu}) => {
