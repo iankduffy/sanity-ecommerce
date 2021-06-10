@@ -1,0 +1,11 @@
+@import '../../module-basics.scss';
+
+.text {
+  z-index: 2;
+  position: absolute;
+  color: $white;
+  bottom: 0;
+  max-width: 600px;
+  width: 100%;
+  padding: 30px;
+}

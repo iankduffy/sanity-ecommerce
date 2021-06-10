@@ -1,4 +1,4 @@
-
+@use "sass:math";
 
 .container {
   margin: 0 auto;
@@ -43,10 +43,8 @@
 }
 
 @for $i from 1 through $grid-cols {
-
   .col-#{$i} {
-    width: (100 / ($grid-cols / $i)) * 1%;
-    // flex: 0 1 (100 / ($grid-cols / $i)) * 1%;
+    width: math.div(100, math.div($grid-cols, $i)) * 1%;
   }
 }
 
@@ -57,8 +55,8 @@
   @each $mq, $size in $sizesmq {
     .col-#{$i}\@#{$mq} {
       @include breakpoint-min($mq) {
-        width: (100 / ($grid-cols / $i)) * 1%;
-        flex: 0 1 (100 / ($grid-cols / $i)) * 1%;
+        width: math.div(100, math.div($grid-cols, $i)) * 1%;
+        flex: 0 1 math.div(100, math.div($grid-cols, $i))
       }
     }
   }

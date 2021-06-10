@@ -1,0 +1,35 @@
+@import '../../module-basics.scss';
+
+.accordian {
+  padding-left: 20px;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 3px; 
+    height: 70%;
+    background: grey;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 3px; 
+    height: 0%;
+    background: black;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    transition: 500ms;
+  }
+}
+
+.accordian__active {
+  &:after {
+    height: 70%;
+  }
+}

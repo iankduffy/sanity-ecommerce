@@ -24,7 +24,7 @@ const TabsComponents = ({tabs}) => {
           currentTab == tab.name && <div className={`${styles.tabLinksContainer} ${currentTab == tab.name ? styles.contentActive : ''}`}>
             {tab.links?.map((link, key) => 
               <Link key={key} href={link.link}>
-                <a className="">
+                <a className=''>
                   <img src={urlFor(link.image).width(1200 / 4).height(475).auto('format').url()} loading="lazy" alt={link.text}/>
                   <p>{link.text}</p>
                 </a>

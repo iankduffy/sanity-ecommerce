@@ -4,7 +4,7 @@ import srcSet from '../../lib/srcset'
 import Block from '../../lib/blockContent'
 import {useState} from 'react'
 import YouTube from 'react-youtube';
-
+import Head from 'next/head'
 
 const Video = ({videoId}) => {
   
@@ -29,11 +29,20 @@ const VideoButton = ({videoPlaying, setVideoPlaying, ...props}) => {
   )
 }
 
-const SixtyFortyComponent = ({image, blockContent, video}) => {
+const SixtyFortyComponent = ({image, blockContent, video, index}) => {
   const [videoPlaying, setVideoPlaying] = useState(false)
 
   return (
     <section className={styles.container}>
+    {index == 0 && 
+      <Head>
+        <link
+          rel='preload'
+          href={urlFor(backgroundImage).width(400).quality(80).auto('format').url()}
+          as="image"
+          imagesrcset={srcSet(backgroundImage, 1800)}
+        />
+      </Head> }
       <div className={styles.blockContent}>
         <Block className='' blocks={blockContent} />
         {video && <VideoButton videoPlaying={videoPlaying} setVideoPlaying={setVideoPlaying} />}
