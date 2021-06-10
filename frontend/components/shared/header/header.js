@@ -5,17 +5,16 @@ import urlFor from '../../../lib/image';
 import {useState} from 'react'
 import SearchBar from '../../search'
 import MobileNav from '../../navigation/mobileNav'
-import styles from '../stylesheets/components/header.module.scss'
+import styles from './header.module.scss'
 
 // TypeScript
 import PromoHeader from '../promotionHeader/promotionHeader'
-
-export interface Props {
-  mainMenu: Array,
-  siteLogo: Any, 
-  logoText: String, 
-  promotion: String
-}
+// export interface Props {
+//   mainMenu: Array,
+//   siteLogo: Any, 
+//   logoText: String, 
+//   promotion: String
+// }
 
 const Header = ({mainMenu, siteLogo, logoText, promotion}) => {
   const [minibagVisable, setMinibagVisable] = useState(false)

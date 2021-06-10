@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Header from './header'
+import Header from './shared/header/header'
 // import Footer from './footer'
 
 const Layout = ({ children, siteSettings, mainMenu, footerMenu}) => (
