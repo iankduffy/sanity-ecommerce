@@ -1,20 +1,28 @@
 import Link from 'next/link';
-import Nav from './navigation/nav';
-import MiniBag from '../components/minibag/minibag'
-import urlFor from '../lib/image';
+import Nav from '../../navigation/nav';
+import MiniBag from '../../minibag/minibag'
+import urlFor from '../../../lib/image';
 import {useState} from 'react'
-import SearchBar from './search'
-import MobileNav from './navigation/mobileNav'
+import SearchBar from '../../search'
+import MobileNav from '../../navigation/mobileNav'
 import styles from '../stylesheets/components/header.module.scss'
+
+// TypeScript
+import PromoHeader from '../promotionHeader/promotionHeader'
+
+export interface Props {
+  mainMenu: Array,
+  siteLogo: Any, 
+  logoText: String, 
+  promotion: String
+}
 
 const Header = ({mainMenu, siteLogo, logoText, promotion}) => {
   const [minibagVisable, setMinibagVisable] = useState(false)
 
   return ( 
     <div>
-      <div className={styles.preHeader}>
-        {promotion}
-      </div>
+      <PromoHeader promoText={promotion} />
       <div className={styles.oHeader}>
         <Link href="/">
           <a><img src={urlFor(siteLogo).auto('format').width(100).url()} className={styles.oHeader__logo} alt="Site Logo"/><p>{logoText}</p></a>
