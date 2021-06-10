@@ -9,14 +9,15 @@ import styles from './header.module.scss'
 
 // TypeScript
 import PromoHeader from '../promotionHeader/promotionHeader'
-// export interface Props {
-//   mainMenu: Array,
-//   siteLogo: Any, 
-//   logoText: String, 
-//   promotion: String
-// }
 
-const Header = ({mainMenu, siteLogo, logoText, promotion}) => {
+export interface Props {
+  mainMenu: Array,
+  siteLogo: Any, 
+  logoText: String, 
+  promotion: String
+}
+
+const Header = ({mainMenu, siteLogo, logoText, promotion}: Props) => {
   const [minibagVisable, setMinibagVisable] = useState(false)
 
   return ( 
