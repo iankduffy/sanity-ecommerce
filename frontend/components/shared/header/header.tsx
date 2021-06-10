@@ -33,7 +33,7 @@ const Header = ({mainMenu, siteLogo, logoText, promotion}: Props) => {
           {minibagVisable && <MiniBag />}
         </div>
       </div>
-      <MobileNav />
+      {/* <MobileNav /> */}
       <div className={styles.searchContainer}>
         <SearchBar />
       </div>
