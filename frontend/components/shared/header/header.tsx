@@ -11,7 +11,7 @@ import styles from './header.module.scss'
 import PromoHeader from '../promotionHeader/promotionHeader'
 
 export interface Props {
-  mainMenu: Array,
+  mainMenu: Any,
   siteLogo: Any, 
   logoText: String, 
   promotion: String
