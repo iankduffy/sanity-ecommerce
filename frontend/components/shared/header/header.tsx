@@ -11,10 +11,10 @@ import styles from './header.module.scss'
 import PromoHeader from '../promotionHeader/promotionHeader'
 
 export interface Props {
-  mainMenu: Any,
-  siteLogo: Any, 
-  logoText: String, 
-  promotion: String
+  mainMenu: any,
+  siteLogo: any, 
+  logoText: string, 
+  promotion: string
 }
 
 const Header = ({mainMenu, siteLogo, logoText, promotion}: Props) => {
