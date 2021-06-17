@@ -1,4 +1,4 @@
-import styles from '../shared/header/header.module.scss'
+import styles from '../header/header.module.scss'
 import Link from 'next/link';
 import {useState} from 'react';
 import RenderSections from './renderNavComponents';

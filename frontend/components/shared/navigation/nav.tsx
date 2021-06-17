@@ -1,7 +1,11 @@
-import styles from '../shared/header/header.module.scss'
+import styles from '../header/header.module.scss'
 import NavItem from './navItem'
 
-const Nav = ({mainMenu}) => {
+export interface Props {
+  mainMenu: any
+}
+
+const Nav = ({mainMenu}: Props) => {
   console.log({mainMenu})
   return ( 
     <nav className={styles.nav}>

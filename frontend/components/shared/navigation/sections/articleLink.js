@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import urlFor from '../../../lib/image'
+import urlFor from '../../../../lib/image'
 
 const ArticleLink = ({page}) => {
   return (

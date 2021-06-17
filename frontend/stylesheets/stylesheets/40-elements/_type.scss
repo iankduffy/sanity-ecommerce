@@ -13,7 +13,7 @@ $heading-size-3: 1.7rem;
 $heading-size-4: 1.30rem;
 $heading-size-5: 1rem;
 //caption sizd
-$heading-size-6: 20px;
+$heading-size-6: 0.85rem;
 
 $header-weight: 400;
 
@@ -48,6 +48,14 @@ h4,
 %h4, 
 .h4 {
   font-size: $heading-size-4; 
+  // text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+h6, 
+%h6, 
+.h6 {
+  font-size: $heading-size-6; 
   // text-transform: uppercase;
   margin-bottom: 0.4rem;
 }

@@ -2,6 +2,13 @@ import Head from 'next/head'
 import Header from './shared/header/header'
 // import Footer from './footer'
 
+export interface Props {
+  children: any,
+  siteSettings: any, 
+  mainMenu: any, 
+  footerMenu: any
+}
+
 const Layout = ({ children, siteSettings, mainMenu, footerMenu}) => (
     <div>
       <Head>
