@@ -14,7 +14,7 @@ const DropDownItem = ({link}) => {
 }
 
 const DropDown = ({dropdownNav, navContent}) => { 
-  console.log({navContent})
+  
   return ( 
     <div className={styles.navDropDown}>
       <div className={styles.navDropDownLinks}>

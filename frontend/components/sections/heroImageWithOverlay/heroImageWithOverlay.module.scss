@@ -1,0 +1,32 @@
+@import '../../../stylesheets/module-basics.scss';
+
+.heroImageContainer {
+  max-height: 70vh;
+  position: relative;
+  overflow: hidden;
+
+  @include breakpoint-min(md) {  
+    max-height: 60vh;
+  }
+
+  &:before {
+    position: absolute;
+    bottom: 0; 
+    content: '';
+    z-index: 2; 
+    height: 100%;
+    left: 0;
+    width: 100%;
+    // background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,0.47522759103641454) 0%, rgba(0,212,255,0) 66%);
+  }
+}
+
+.content {
+  color: $white;
+  position: absolute;
+  bottom: 0; 
+  z-index: 3;
+  text-align: center;
+  width: 100%;
+}
