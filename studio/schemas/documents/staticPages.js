@@ -22,6 +22,8 @@ export default {
         { type: 'productTabs' },
         { type: 'ctaSection' },
         { type: 'fullImageWithText' },
+        { type: 'heroImageWithOverlay' }, 
+        { type: 'sliderComp' }
       ],
     }
   ], 

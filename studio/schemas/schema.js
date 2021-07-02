@@ -29,6 +29,9 @@ import productAddToBag from './objects/productPageComponents/productAddToBag'
 import productTabs from './objects/productPageComponents/productTabs'
 import ctaSection from './objects/productPageComponents/ctaSection'
 import fullImageWithText from './objects/productPageComponents/fullImageWithText'
+import heroImageWithOverlay from './objects/productPageComponents/heroImageWithOverlay'
+
+import sliderComp from './objects/productPageComponents/sliderComp'
 
 import localeString from './locale/String'
 import localeText from './locale/Text'
@@ -64,6 +67,8 @@ export default createSchema({
     blockButton,
     fullImageWithText,
     ctaSection,
+    heroImageWithOverlay,
+    sliderComp,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,
