@@ -23,7 +23,9 @@ export default {
         { type: 'ctaSection' },
         { type: 'fullImageWithText' },
         { type: 'heroImageWithOverlay' }, 
-        { type: 'sliderComp' }
+        { type: 'sliderComp' }, 
+        { type: 'categoriesComponent' }, 
+        { type: 'productSlider'}
       ],
     }
   ], 

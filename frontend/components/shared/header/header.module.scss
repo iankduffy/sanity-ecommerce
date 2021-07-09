@@ -1,17 +1,16 @@
 @import '../../../stylesheets/module-basics.scss';
 
 .oHeader {
+  display: flex;
   background: #fff;
   width: 100vw;
   max-height: 80px;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   justify-content: center;
 
-
   @include breakpoint-min(md) { 
     position: relative;
     top: 0;
-    display: flex; 
     justify-content: space-between;
     align-items: center;
     padding: 10px 30px;
@@ -35,7 +34,8 @@
     z-index: 10;
     min-height: 40px;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
+    box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.16);
   }
 
 }

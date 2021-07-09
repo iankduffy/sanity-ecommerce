@@ -1,7 +1,6 @@
 import urlFor from '../../lib/image';
 
 const MiniBagItem = ({lineitem}) => {
-  console.log({lineitem})
   return (
     <div className="u-dis-flex u-mar-v-sm">
       <img src={urlFor(lineitem.defaultImage).height(100).width(90).auto('format').url()} />

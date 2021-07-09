@@ -3,8 +3,6 @@
 .productLink {
   border: 1px solid transparent;
   padding: 5px;
-  contain: layout inline-size; /* For browsers that support Container Queries */
-  --css-contain: layout inline-size; /* For the polyfill to use */
 
   &:hover {
     border: 1px solid $primary-color;
@@ -16,24 +14,4 @@
   padding: 2px;
   text-align: center;
   font-size: 0.8rem;
-}
-
-.productTagContainer {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  grid-template-rows: auto;
- 
-}
-
-@container (min-width: 700px) { /* For browsers that support Container Queries */
-  .h4 {
-    color: red;
-  }
-}
-
-@media --css-container and (max-width: 700px) { /* For the polyfill to use */
-  .h4 {
-    color: red;
-  }
 }

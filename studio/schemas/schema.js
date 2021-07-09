@@ -23,15 +23,19 @@ import sixtyFortyComponent from './objects/sixtyFortyComponet'
 
 import articleLink from './objects/navComponents/articleLink'
 
-import productNavigation from './objects/productPageComponents/productNavigation'
-import productFeatures from './objects/productPageComponents/productFeatures'
-import productAddToBag from './objects/productPageComponents/productAddToBag'
-import productTabs from './objects/productPageComponents/productTabs'
-import ctaSection from './objects/productPageComponents/ctaSection'
-import fullImageWithText from './objects/productPageComponents/fullImageWithText'
-import heroImageWithOverlay from './objects/productPageComponents/heroImageWithOverlay'
+import productNavigation from './objects/staticPageComponents/productNavigation'
+import productFeatures from './objects/staticPageComponents/productFeatures'
+import productAddToBag from './objects/staticPageComponents/productAddToBag'
+import productTabs from './objects/staticPageComponents/productTabs'
+import ctaSection from './objects/staticPageComponents/ctaSection'
+import fullImageWithText from './objects/staticPageComponents/fullImageWithText'
+import heroImageWithOverlay from './objects/staticPageComponents/heroImageWithOverlay'
+import categoriesComponent from './objects/staticPageComponents/categoriesComponent'
+import productSlider from './objects/staticPageComponents/productSlider'
 
-import sliderComp from './objects/productPageComponents/sliderComp'
+import sliderComp from './objects/staticPageComponents/sliderComp'
+
+import blockGroup from './block/buttonGroup'
 
 import localeString from './locale/String'
 import localeText from './locale/Text'
@@ -48,6 +52,7 @@ export default createSchema({
     // The following are document types which will appear
     // in the studio.
     articleLink,
+    blockGroup,
     nav,
     routes,
     siteSettings,
@@ -69,6 +74,8 @@ export default createSchema({
     ctaSection,
     heroImageWithOverlay,
     sliderComp,
+    categoriesComponent,
+    productSlider,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,

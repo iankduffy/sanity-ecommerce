@@ -10,8 +10,6 @@ import MiniBagItem from './minibagItem'
 const MiniBag = () => {
   const [state, setState] = useContext(CartContext);
 
-  console.log(state.cart.products)
-
   const removeItem = (product) => {
     let filteredArray = cartItems.filter(cart => {
       return cart !== product

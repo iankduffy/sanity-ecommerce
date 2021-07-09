@@ -61,5 +61,9 @@ export default {
       type: 'blockButton',
       name: 'blockButton'
     }, 
+    {
+      type: 'buttonGroup',
+      name: 'buttonGroup'
+    }
   ]
 }

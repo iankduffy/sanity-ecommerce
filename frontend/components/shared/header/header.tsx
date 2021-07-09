@@ -26,7 +26,7 @@ const Header = ({mainMenu, siteLogo, logoText, promotion}: Props) => {
       <PromoHeader promoText={promotion} />
       <div className={styles.oHeader}>
         <Link href="/">
-          <a><img src={urlFor(siteLogo).auto('format').width(100).url()} className={styles.oHeader__logo} alt="Site Logo"/><p>{logoText}</p></a>
+          <a><img src={urlFor(siteLogo).auto('format').width(100).url()} className={styles.oHeader__logo} alt="Site Logo"/><span>{logoText}</span></a>
         </Link>
         <Nav mainMenu={mainMenu} />
         <DesktopButtons />

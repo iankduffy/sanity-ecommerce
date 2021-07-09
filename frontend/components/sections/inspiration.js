@@ -24,7 +24,6 @@ const ArticleLink = ({page}) => {
 }
 
 const Inspiration = ({heading, paragraph, page, products}) => {
-  console.log({page})
   return (
     <section className={styles.inspiration}>
       <div className={styles.inspiration_container}>

@@ -1,14 +1,14 @@
 import RenderSections from './../../renderSections'; 
 import styles from './sliderComp.module.scss';
 import { useRef, useEffect, useState } from 'react'
-import { getCurrentSlideWidth, scrollRightByOne, getVisibleSlideIndex } from './scrollUtilities'
+import { getCurrentSlideWidth, scrollRightByOne, getVisibleSlideIndex, scrollToSlideAtIndex } from './scrollUtilities'
 import {debounce} from '../../../lib/debounce';
 
 
-const SliderDot = ({index, currentSlide, ...props}) => {
+const SliderDot = ({index, currentSlide, onClickEvent, ...props}) => {
   const classes = `${styles.dot} ${currentSlide ? styles.active : ''}`
   return (
-    <div className={classes}>
+    <div className={classes} onClick={onClickEvent}>
       <span>{index + 1}</span>
     </div>
   )
@@ -29,7 +29,8 @@ const SlideComp = ({slides, timer}) => {
     clearTimeout(interval)
     if (getVisibleSlideIndex(slider) >= 0) {
       setSlide(getVisibleSlideIndex(slider))
-
+      clearTimeout(interval)
+      
       if (timer) {
         setTimer()
       }
@@ -51,10 +52,8 @@ const SlideComp = ({slides, timer}) => {
       </div>
 
       <div className={styles.slideDots}>
-        {slides.map((slide, index) => <SliderDot key={index} index={index} currentSlide={index === currentSlide}/>)}
+        {slides.map((slide, index) => <SliderDot key={index} index={index} currentSlide={index === currentSlide} onClickEvent={() => scrollToSlideAtIndex(slider, index)}  />)}
       </div>
-
-      {currentSlide >= 0 ? currentSlide : ''}
     </div>
   )
 }

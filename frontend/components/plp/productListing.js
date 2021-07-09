@@ -6,7 +6,6 @@ import styles from '../../stylesheets/components/product/productListing.module.s
 
 
 const ProductListing = ({productsData = null}) => {
-  console.log(productsData)
   return ( 
     <div className={`${styles.container}`}>
 

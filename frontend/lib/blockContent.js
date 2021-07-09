@@ -1,4 +1,5 @@
 import BlockContent from '@sanity/block-content-to-react'
+import ButtonGroup from './blockContent/buttonGroup/buttonGroup'
 
 const Block = ({blocks = '', dataset = 'production', projectId = 'phinh7i9', className = '', imageOptions = {w: 1000, h: 1000, fit: 'max', auto: 'format'}}) => {
   const serializers = {
@@ -7,7 +8,8 @@ const Block = ({blocks = '', dataset = 'production', projectId = 'phinh7i9', cla
         <a className="c-btn u-mar-t-md" href={node.url} target="_blank">
           {node.buttonText}
         </a>
-      )
+      ), 
+      buttonGroup: ({node}) => <ButtonGroup buttons={node} />
     }
   }
 

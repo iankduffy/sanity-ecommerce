@@ -10,5 +10,7 @@ export {default as productTabs} from './productTabs'
 export {default as fullImageWithText} from './fullImageWithText'
 export {default as heroImageWithOverlay} from './heroImageWithOverlay/heroImageWithOverlay'
 export {default as sliderComp } from './sliderComp/sliderComp'
+export {default as categoriesComponent } from './categoriesComponent/categoriesComponent'
+export {default as productSlider } from './productSlider/productSlider'
 
 

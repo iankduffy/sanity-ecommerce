@@ -44,6 +44,13 @@ const staticPageQuery = `*[_type == "routes" && slug.current == $slug][0] {
     ...,
     content[] {
       ...,
+      _type == "productSlider" => {
+        products[]->{
+          title, 
+          slug,
+          defaultProductVariant
+        }
+      },
       _type == "inspiration" => {
         products[]->{
           ...
@@ -70,6 +77,13 @@ const homePageQuery = `*[_type == "siteSettings"][0] {
     ...,
     content[] {
       ...,
+      _type == "productSlider" => {
+        products[]->{
+          title, 
+          slug,
+          defaultProductVariant
+        }
+      },
       _type == "inspiration" => {
         products[]->{
           ...

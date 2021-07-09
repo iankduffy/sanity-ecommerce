@@ -8,7 +8,6 @@ import ProductForm from '../../components/pdp/product-form'
 import Block from '../../lib/blockContent'
 
 const ProductPage = ({mainMenu, siteSettings, footerMenu, productInfo}) => {
-  console.log({productInfo})
   return (
   <Layout mainMenu={mainMenu} siteSettings={siteSettings} footerMenu={footerMenu}>
     <div className="u-dis-flex u-mar-v-md">

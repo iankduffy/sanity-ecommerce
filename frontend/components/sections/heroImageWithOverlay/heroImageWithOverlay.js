@@ -4,8 +4,6 @@ import urlFor from '../../../lib/image'
 import srcSet from '../../../lib/srcset'
 
 const heroImageWithOverlay = ({blockContent = '', image='', ...props}) => {
-  console.log(props)
-
   return(
     <section className={styles.heroImageContainer}>
       <picture> 
