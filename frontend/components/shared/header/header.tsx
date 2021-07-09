@@ -18,7 +18,7 @@ export interface Props {
   promotion: string
 }
 
-const Header = ({mainMenu, siteLogo, logoText, promotion}: Props) => {
+const Header = ({mainMenu, siteLogo, logoText = '', promotion}: Props) => {
   const [minibagVisable, setMinibagVisable] = useState(false)
 
   return ( 
