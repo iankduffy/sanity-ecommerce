@@ -1,12 +1,15 @@
 import styles from '../header/header.module.scss'
 import NavItem from './navItem'
 
+import { NavProps } from '@type/global'
+
+
 export interface Props {
-  mainMenu: any
+  mainMenu: NavProps
 }
 
 const Nav = ({mainMenu}: Props) => {
-  console.log({mainMenu})
+  console.log(mainMenu)
   return ( 
     <nav className={styles.nav}>
       {mainMenu?.navItems?.map((menu, key) => 

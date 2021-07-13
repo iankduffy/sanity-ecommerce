@@ -11,5 +11,5 @@ export interface SiteSettingProps {
 export interface NavProps {
   title: number, 
   id: string, 
-  navItems: any[]
+  navItems: Array<any>
 }

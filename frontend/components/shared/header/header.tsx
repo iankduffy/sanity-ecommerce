@@ -11,7 +11,7 @@ import styles from './header.module.scss'
 import PromoHeader from './partials/promotionHeader/promotionHeader'
 import { DesktopButtons } from './partials/desktopButtons/desktopButtons';
 
-import { NavProps } from 'components/layout/layoutProps'
+import { NavProps } from '@type/global'
 
 export interface Props {
   mainMenu: NavProps,

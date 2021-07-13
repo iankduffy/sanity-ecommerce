@@ -1,5 +1,6 @@
 import { BlockContentProps } from './block-content-to-react'
 
+//  Site Settings
 export interface SiteSettingProps {
   siteTitle: string,
   siteDesc: string,
@@ -10,17 +11,30 @@ export interface SiteSettingProps {
   promotionText: string
 }
 
+
+// Nav Content 
 export interface NavProps {
   title: number, 
   id: string, 
-  navItems: Array<any>
+  navItems: Array<NavItemProps>
 }
 
+export interface NavItemProps {
+  mainPage: any, // Object to routes that needs writing
+  dropdown: any, // Object 
+  navContent: Array<any>
+}
+
+// Nav Content End
+
+// Static Page 
 export interface PageProps {
   title: string,
   content: Array<any>,
 }
+// Static Page End 
 
+// Product Info
 export interface ProductProps {
   title: string, 
   slug: string, 
@@ -33,6 +47,8 @@ export interface ProductProps {
   categories: Array<any>, 
   body: any // Bug: Type 'BlockContentProps' is not assignable to type 'string'.
 }
+
+// Product end 
 
 export interface brandsProps {
   brand: string
