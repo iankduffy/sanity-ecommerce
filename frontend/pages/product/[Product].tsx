@@ -25,7 +25,7 @@ const ProductPage = ({mainMenu, siteSettings, footerMenu, productInfo} : Product
         <ProductForm product={productInfo} />
       </div>
       <div className="u-dis-flex u-mar-h-md">
-        <Block className="col-6@md col-12" blocks={productInfo?.body?.en} />
+        <Block className="col-6@md col-12" blocks={productInfo.body} />
       </div>
     </>
   </Layout>

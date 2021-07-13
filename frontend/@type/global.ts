@@ -31,5 +31,5 @@ export interface ProductProps {
   vendor: any, 
   blurb: any,
   categories: Array<any>, 
-  body: BlockContentProps
+  body: any
 }
