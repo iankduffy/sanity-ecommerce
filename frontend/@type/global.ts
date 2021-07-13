@@ -1,4 +1,4 @@
-import {BlockContentProps} from './block-content-to-react'
+import { BlockContentProps } from './block-content-to-react'
 
 export interface SiteSettingProps {
   siteTitle: string,
@@ -31,5 +31,17 @@ export interface ProductProps {
   vendor: any, 
   blurb: any,
   categories: Array<any>, 
-  body: any
+  body: any // Bug: Type 'BlockContentProps' is not assignable to type 'string'.
+}
+
+export interface brandsProps {
+  brand: string
+}
+
+export interface CategoryProps {
+  title: string, 
+  slug: string, 
+  description: string | any, 
+  parents: Array<CategoryProps>, 
+  brands: Array<brandsProps>
 }

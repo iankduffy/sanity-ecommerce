@@ -7,6 +7,14 @@ import ProductListings from '../../components/plp/productListing';
 import ProductFilters from '../../components/plp/filters';
 import styles from '../../stylesheets/components/product/productListing.module.scss'
 
+import { SiteSettingProps, NavProps, CategoryProps } from '@type/global'
+
+export interface CategoryPageProps {
+  mainMenu: NavProps, 
+  siteSettings: SiteSettingProps, 
+  footer: NavProps, 
+  categoriesInfo: CategoryProps
+}
 
 const Categories = ({mainMenu, siteSettings, footerMenu, categoriesInfo}) => {
   const [productData, setProductData] = useState([])

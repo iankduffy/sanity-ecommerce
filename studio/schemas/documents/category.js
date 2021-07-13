@@ -43,8 +43,8 @@ export default {
       of: [
         {
           type: 'string',
-          name: 'parents',
-          title: 'Parent categories',
+          name: 'brands',
+          title: 'Brands',
         }
       ]
     }
