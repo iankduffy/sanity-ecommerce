@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-import Layout from '../../components/layout/layout.js';
+import Layout from '../../components/layout/layout';
 import groq from 'groq'
 import sanity from '../../lib/sanity';
 import urlFor from '../../lib/image';
