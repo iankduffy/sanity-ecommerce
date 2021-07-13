@@ -9,6 +9,8 @@ import Block from '../../lib/blockContent'
 
 import { SiteSettingProps, NavProps, ProductProps } from '@type/global'
 
+import { siteSettingsQuery, mainMenuQuery, footerMenuQuery, ProductQuery } from '@query/global'
+
 export interface ProductPageProps {
   siteSettings: SiteSettingProps, 
   mainMenu: NavProps, 
@@ -32,40 +34,9 @@ const ProductPage = ({mainMenu, siteSettings, footerMenu, productInfo} : Product
   )
 }
 
-const siteSettingsQuery = `*[_type == "siteSettings"][0] {
-  ...
-}`
-
-const mainMenuQuery = `*[_type == "nav" && id == "main-menu"][0] {
-	navItems[] {
-    mainpage {
-      title,
-      "route": route->slug.current
-    },
-  "dropdown": dropdownNav[] {
-      title,
-      "slug": route->slug, 
-    },
-    navContent
- 	}
-}`
-
- const footerMenuQuery = `*[_type == "nav" && id == "footer-menu"][0] {
-	navItems[] {
-   text,
-   "slug": page[]->[0].slug,
-   ...
- 	}
- }`
-
-const ProductQuery = `*[_type == "product" && slug.current == $slug] {
-  ...
-}[0]`
-
 ProductPage.getInitialProps = async ({query}) => {
   let slug = `/product/${query.Product}`
   slug = slug.toLowerCase()
-  // console.log({query})
 
   if (!query) {
     console.error('no query')
