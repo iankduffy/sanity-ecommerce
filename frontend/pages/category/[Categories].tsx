@@ -9,6 +9,8 @@ import styles from '../../stylesheets/components/product/productListing.module.s
 
 import { SiteSettingProps, NavProps, CategoryProps } from '@type/global'
 
+import { siteSettingsQuery, mainMenuQuery, footerMenuQuery, CategoriesQuery, CategoriesProductQuery } from '@query/global'
+
 export interface CategoryPageProps {
   mainMenu: NavProps, 
   siteSettings: SiteSettingProps, 
@@ -46,47 +48,6 @@ const Categories = ({mainMenu, siteSettings, footerMenu, categoriesInfo}) => {
   </Layout>
   )
 }
-
-const siteSettingsQuery = `*[_type == "siteSettings"][0] {
-  ...
-}`
-
-const mainMenuQuery = `*[_type == "nav" && id == "main-menu"][0] {
-	navItems[] {
-    mainpage {
-      title,
-      "route": route->slug.current
-    },
-  "dropdown": dropdownNav[] {
-      title,
-      "slug": route->slug,
-    },
-    navContent
- 	}
-}`
-
- const footerMenuQuery = `*[_type == "nav" && id == "footer-menu"][0] {
-	navItems[] {
-   text,
-   "slug": page[]->[0].slug,
-   ...
- 	}
- }`
-
- const CategoriesQuery = `
- *[_type == "category" && slug.current == $slug] {
-    _id,
-    "categories": *[_type == 'category' && references(^._id)],
-    title,
-    description
-  }[0]
-`
-
-const CategoriesProductQuery = `
-  *[_type == "product" && references($id)] {
-    ...
-  }
-`
 
 Categories.getInitialProps = async({query}) => {
   let slug = `/category/${query.Categories}`
