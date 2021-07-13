@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Nav from '../navigation/nav';
 import MiniBag from '../../minibag/minibag'
-import urlFor from '../../../lib/image';
+import urlFor from 'lib/image';
 import {useState} from 'react'
 import SearchBar from '../../search'
 import MobileNav from '../navigation/mobileNav'
@@ -11,27 +11,28 @@ import styles from './header.module.scss'
 import PromoHeader from './partials/promotionHeader/promotionHeader'
 import { DesktopButtons } from './partials/desktopButtons/desktopButtons';
 
+import { NavProps } from 'components/layout/layoutProps'
+
 export interface Props {
-  mainMenu: any,
-  siteLogo: any, 
-  logoText: string, 
+  mainMenu: NavProps,
+  siteLogo: any,
   promotion: string
 }
 
-const Header = ({mainMenu, siteLogo, logoText = '', promotion}: Props) => {
-  const [minibagVisable, setMinibagVisable] = useState(false)
+const Header = ({mainMenu, siteLogo, promotion}: Props) => {
+  const [minibagVisible, setMinibagVisible] = useState(false)
 
   return ( 
     <div>
       <PromoHeader promoText={promotion} />
       <div className={styles.oHeader}>
         <Link href="/">
-          <a><img src={urlFor(siteLogo).auto('format').width(100).url()} className={styles.oHeader__logo} alt="Site Logo"/><span>{logoText}</span></a>
+          <a><img src={urlFor(siteLogo).auto('format').width(100).url()} className={styles.oHeader__logo} alt="Site Logo"/></a>
         </Link>
         <Nav mainMenu={mainMenu} />
         <DesktopButtons />
       </div>
-      <MobileNav />
+      <MobileNav mainMenu={mainMenu}/>
       {/* <div className={styles.searchContainer}>
         <SearchBar />
       </div> */}

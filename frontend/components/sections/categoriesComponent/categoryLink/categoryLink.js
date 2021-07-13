@@ -5,7 +5,7 @@ import styles from '../categoriesComponent.module.scss'
 
 const categoryLink = ({link}) => {
   const {title = '', buttonText = '', buttonUrl = '', image} = link; 
-  console.log(link)
+  // console.log(link)
 
   return(
     <Link href={buttonUrl}>

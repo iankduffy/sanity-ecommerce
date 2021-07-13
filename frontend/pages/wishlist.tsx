@@ -1,11 +1,11 @@
-import Layout from '../components/layout';
+import Layout from '../components/layout/layout';
 import groq from 'groq'
 import sanity from '../lib/sanity';
 
 const WishListPage = ({mainMenu, siteSettings, footerMenu}) => {
   return (
     <Layout mainMenu={mainMenu} siteSettings={siteSettings} footerMenu={footerMenu}>
-      Wishlist
+      <p>Wishlist</p>
     </Layout>
   )
 }

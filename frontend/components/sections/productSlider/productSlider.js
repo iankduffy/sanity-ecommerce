@@ -2,7 +2,7 @@ import styles from './productSlider.module.scss'
 import ProductLink from '../../plp/productLink'
 
 const productSlider = ({title, products}) => {
-  console.log(products)
+  // console.log(products)
   return(
     <section className={styles.productSliderContainer}>
       <h3>{title}</h3>

@@ -1,7 +1,7 @@
 import styles from '../../stylesheets/components/staticPages/productNavigation.module.scss'
 
 const ProductNavigation = ({product, tabs = []}) => {
-  console.log({tabs})
+  // console.log({tabs})
   return (
     <section className={styles.productNav}>
       <p className='h4'>{product.title}</p>

@@ -1,15 +1,16 @@
 import Head from 'next/head'
-import Header from './shared/header/header'
+import Header from '../shared/header/header'
 // import Footer from './footer'
+import { SiteSettingProps, NavProps } from './layoutProps'
 
 export interface Props {
-  children: any,
-  siteSettings: any, 
-  mainMenu: any, 
-  footerMenu: any
+  children: JSX.Element,
+  siteSettings: SiteSettingProps, 
+  mainMenu: NavProps, 
+  footerMenu: NavProps, 
 }
 
-const Layout = ({ children, siteSettings, mainMenu, footerMenu}) => (
+const Layout = ({ children, siteSettings, mainMenu, footerMenu}: Props) => (
     <div>
       <Head>
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>

@@ -1,14 +1,23 @@
-import {useEffect} from 'react'
-import Layout from '../components/layout';
+// import  {useEffect} from 'react'
+import Layout from '../components/layout/layout';
 import groq from 'groq'
 import sanity from '../lib/sanity';
 import RenderSections from '../components/renderSections';
 
-const StaticPage = ({mainMenu, staticPageContent, siteSettings, footerMenu}) => {
+import { SiteSettingProps, NavProps, PageProps } from '@type/global'
 
+export interface StaticPageProps {
+  staticPageContent: PageProps,
+  siteSettings: SiteSettingProps, 
+  mainMenu: NavProps, 
+  footerMenu: NavProps, 
+}
+
+const StaticPage = ({mainMenu, staticPageContent, siteSettings, footerMenu} : StaticPageProps) => {
+  console.log(staticPageContent)
   return (
   <Layout mainMenu={mainMenu} siteSettings={siteSettings} footerMenu={footerMenu}>
-    <RenderSections sections={staticPageContent.page.content}/>
+    <RenderSections sections={staticPageContent.content}/>
   </Layout>
   )
 }
@@ -117,9 +126,11 @@ StaticPage.getInitialProps = async ({query}) => {
   let staticPageContent
 
   if (slug && slug === '/') { 
-    staticPageContent = await sanity.fetch(homePageQuery, {slug})
+    let data = await sanity.fetch(homePageQuery, {slug}) 
+    staticPageContent = data.page
   } else if (slug && slug !== '/') {
-    staticPageContent = await sanity.fetch(staticPageQuery, {slug})
+    let data = await sanity.fetch(homePageQuery, {slug}) 
+    staticPageContent = data.page
   } else {
     
   }

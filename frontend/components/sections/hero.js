@@ -1,6 +1,6 @@
 import urlFor from '../../lib/image'
 import styles from '../../stylesheets/components/staticPages/hero.module.scss'
-import ProgressImage from '../progressImage'
+// import ProgressImage from '../progressImage'
 import srcSet from '../../lib/srcset'
 import Head from 'next/head'
 
