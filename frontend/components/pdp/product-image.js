@@ -3,7 +3,7 @@ import urlFor from '../../lib/image';
 import srcSet from '../../lib/srcset';
 import styles from '../../stylesheets/components/product/productPage.module.scss'
 
-const ProductImages = ({productImages, className}) => {
+const ProductImages = ({productImages}) => {
   const [image, setImage] = useState(productImages[0]);
 
   return (
