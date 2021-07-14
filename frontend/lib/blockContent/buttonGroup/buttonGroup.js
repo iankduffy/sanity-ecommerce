@@ -12,16 +12,12 @@ const Button = ({button}) => {
   )
 }
 
-const ButtonGroup = ({buttons, ...props}) => {
-  const { button = [] } = props
-
-  console.log(props)
-  
+const ButtonGroup = ({button}) => {
   return (
     <div className={styles.buttonGroup}>
-      {/* {button.map((button, key) => 
+      {button.map((button, key) => 
         <Button button={button} key={key}/>
-      )} */}
+      )}
     </div>
   )
 }
