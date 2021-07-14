@@ -9,7 +9,7 @@ const Block = ({blocks = '', dataset = 'production', projectId = 'phinh7i9', cla
           {node.buttonText}
         </a>
       ), 
-      buttonGroup: ({node}) => <ButtonGroup buttons={node} />
+      buttonGroup: ({node}) => <ButtonGroup {...node} />
     }
   }
 

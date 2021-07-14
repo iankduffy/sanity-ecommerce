@@ -13,7 +13,7 @@ function resolveSections (section) {
 }
 
 function RenderSections (props) {
-  const {sections} = props
+  const { sections } = props
 
   if (!sections) {
     console.error('Missing section')

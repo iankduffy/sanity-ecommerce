@@ -1,8 +1,16 @@
-import Layout from '../components/layout/layout';
+import Layout from '../components/shared/layout/layout';
 import groq from 'groq'
 import sanity from '../lib/sanity';
 
+import { SiteSettingProps, NavProps } from '@type/global'
+
 import { siteSettingsQuery, mainMenuQuery, footerMenuQuery } from '@query/global'
+
+export interface StaticPageProps {
+  siteSettings: SiteSettingProps, 
+  mainMenu: NavProps, 
+  footerMenu: NavProps, 
+}
 
 
 const WishListPage = ({mainMenu, siteSettings, footerMenu}) => {

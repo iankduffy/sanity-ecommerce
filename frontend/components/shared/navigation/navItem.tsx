@@ -14,7 +14,6 @@ const DropDownItem = ({link}) => {
 }
 
 const DropDown = ({dropdownNav, navContent}) => { 
-  
   return ( 
     <div className={styles.navDropDown}>
       <div className={styles.navDropDownLinks}>
@@ -27,7 +26,14 @@ const DropDown = ({dropdownNav, navContent}) => {
   )
 }
 
-const NavItem = ({navTitle = '', navRoute = {}, navDropDown = null, navContent}) => { 
+export interface NavItemsProp {
+  navTitle: string,
+  navRoute: any, 
+  navDropDown: any, 
+  navContent: any
+}
+
+const NavItem = ({navTitle = '', navRoute = {}, navDropDown = null, navContent}: NavItemsProp) => { 
   const [isDropDownOpen, setDropDownOpen] = useState(false)
 
   return ( 

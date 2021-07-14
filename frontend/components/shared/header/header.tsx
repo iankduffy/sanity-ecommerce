@@ -12,8 +12,7 @@ import PromoHeader from './partials/promotionHeader/promotionHeader'
 import { DesktopButtons } from './partials/desktopButtons/desktopButtons';
 
 import { NavProps } from '@type/global'
-
-export interface Props {
+interface Props {
   mainMenu: NavProps,
   siteLogo: any,
   promotion: string

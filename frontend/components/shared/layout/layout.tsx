@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Header from '../shared/header/header'
+import Header from '../header/header'
 // import Footer from './footer'
 import { SiteSettingProps, NavProps } from './layoutProps'
 

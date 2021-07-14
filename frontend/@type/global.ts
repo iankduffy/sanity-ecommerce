@@ -11,7 +11,6 @@ export interface SiteSettingProps {
   promotionText: string
 }
 
-
 // Nav Content 
 export interface NavProps {
   title: number, 
@@ -20,9 +19,14 @@ export interface NavProps {
 }
 
 export interface NavItemProps {
-  mainPage: any, // Object to routes that needs writing
-  dropdown: any, // Object 
+  mainpage: NavRouteProps // Object to routes that needs writing
+  dropdown: Array<NavRouteProps>, // Object 
   navContent: Array<any>
+}
+
+export interface NavRouteProps {
+  route: string, 
+  title: string
 }
 
 // Nav Content End
@@ -47,7 +51,6 @@ export interface ProductProps {
   categories: Array<any>, 
   body: any // Bug: Type 'BlockContentProps' is not assignable to type 'string'.
 }
-
 // Product end 
 
 export interface brandsProps {
@@ -61,3 +64,4 @@ export interface CategoryProps {
   parents: Array<CategoryProps>, 
   brands: Array<brandsProps>
 }
+

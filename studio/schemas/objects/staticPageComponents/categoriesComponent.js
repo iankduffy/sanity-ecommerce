@@ -2,17 +2,14 @@ export default {
   name: "categoriesComponent",
   type: "object",
   title: "Categories Link Component",
-  fields: [
-    { 
+  fields: [{ 
       name: 'categoryLink', 
       type: 'array', 
       title: "Category Link",
-      of: [
-        {
+      of: [{
           type: 'object',
           name: "category",
-          fields: [
-            {
+          fields: [{
               name: 'image',
               type: 'image',
               title: 'Image',
