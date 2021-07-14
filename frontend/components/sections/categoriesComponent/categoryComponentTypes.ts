@@ -3,5 +3,5 @@ export interface CategoryLinkProps {
   title: string, 
   buttonText: string, 
   buttonUrl: string,
-  lazyLoad: number
+  index: number, 
 }

@@ -3,9 +3,9 @@ import urlFor from '../../../../lib/image'
 import srcSet from '../../../../lib/srcset'
 import styles from '../categoriesComponent.module.scss'
 
-const categoryLink = ({link, index}) => {
-  const {title = '', buttonText = '', buttonUrl = '', image} = link; 
-  // console.log(link)
+import { CategoryLinkProps } from '../categoryComponentTypes'
+
+const categoryLink = ({title, buttonText, buttonUrl, image, index} : CategoryLinkProps) => {
 
   return(
     <Link href={buttonUrl}>

@@ -24,7 +24,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "components/shared/layout/layout.tsx", "components/sections/categoriesComponent/categoryLink/categoryLink.js", "components/sections/categoriesComponent/categoryLink/categoryLink.js"  ],
+, "components/shared/layout/layout.tsx", "components/sections/categoriesComponent/categoryLink/categoryLink.tsx", "components/sections/categoriesComponent/categoryLink/categoryLink.tsx"  ],
   "exclude": [
     "node_modules"
   ],

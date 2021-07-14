@@ -8,11 +8,11 @@ interface CategoriesComponentProps {
   index: number
 }
 
-const categoriesComponent = ({categoryLink, index, ...props} : CategoriesComponentProps) => {
+const categoriesComponent = ({categoryLink, index} : CategoriesComponentProps) => {
 
   return (
     <section className={styles.categoryContainer}> 
-      {categoryLink.map((link, key) => <CategoryLink key={key} link={link} index={index} />)}
+      {categoryLink.map((link, key) => <CategoryLink {...link} key={key} index={index} />)}
     </section>
   )
 }

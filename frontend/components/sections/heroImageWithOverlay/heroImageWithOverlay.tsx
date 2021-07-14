@@ -13,7 +13,7 @@ const heroImageWithOverlay = ({blockContent = '', image='', index}: heroImagePro
   return(
     <section className={styles.heroImageContainer}>
       <picture> 
-        <source width="1140" height="300" loading="" src={urlFor(image).width(1140).height(300).fit('fill').quality(50).auto('format').url()} srcSet={srcSet(image, 1800, 700)} media="(min-width: 738px)" />
+        <source src={urlFor(image).width(1140).height(300).fit('fill').quality(50).auto('format').url()} srcSet={srcSet(image, 1800, 700)} media="(min-width: 738px)" />
         <img src={urlFor(image).width(400).height(400).fit('fill').quality(50).auto('format').url()} srcSet={srcSet(image, 700)} width="400" height="400" loading={index < 2 ? 'eager' : 'lazy'}/>
       </picture>
       <div className={styles.content}>
