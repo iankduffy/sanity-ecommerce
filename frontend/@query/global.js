@@ -33,7 +33,7 @@ export const homePageQuery = `*[_type == "siteSettings"][0] {
       _type == "productSlider" => {
         products[]->{
           title, 
-          slug,
+          "slug": slug.current,
           defaultProductVariant
         }
       },
@@ -66,7 +66,7 @@ export const staticPageQuery = `*[_type == "routes" && slug.current == $slug][0]
       _type == "productSlider" => {
         products[]->{
           title, 
-          slug,
+          "slug": slug.current,
           defaultProductVariant
         }
       },

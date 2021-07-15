@@ -7,7 +7,8 @@ import ProductImage from '../../components/pdp/product-image'
 import ProductForm from '../../components/pdp/product-form'
 import Block from '../../lib/blockContent'
 
-import { SiteSettingProps, NavProps, ProductProps } from '@type/global'
+import { SiteSettingProps, NavProps } from '@type/global'
+import { ProductProps } from '@type/productTypes'
 
 import { siteSettingsQuery, mainMenuQuery, footerMenuQuery, ProductQuery } from '@query/global'
 

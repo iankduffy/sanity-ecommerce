@@ -38,21 +38,6 @@ export interface PageProps {
 }
 // Static Page End 
 
-// Product Info
-export interface ProductProps {
-  title: string, 
-  slug: string, 
-  productVariant: any,
-  defaultProductVariant: any, // Need to add variants
-  variants: Array<any>,
-  tags: Array<string>, 
-  vendor: any, 
-  blurb: any,
-  categories: Array<any>, 
-  body: any // Bug: Type 'BlockContentProps' is not assignable to type 'string'.
-}
-// Product end 
-
 export interface brandsProps {
   brand: string
 }
