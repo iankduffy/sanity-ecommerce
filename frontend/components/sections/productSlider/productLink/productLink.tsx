@@ -3,9 +3,11 @@ import Link from 'next/link';
 import urlFor from 'lib/image';
 import styles from 'stylesheets/components/product/productLink.module.scss'
 
+import { VariantProps } from '@type/productTypes'
+
 interface ProductLinkProps {
   slug: string
-  defaultProductVariant: any, 
+  defaultProductVariant: VariantProps, 
   title: string, 
   index: number
 }

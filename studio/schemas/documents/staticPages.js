@@ -25,7 +25,8 @@ export default {
         { type: 'heroImageWithOverlay' }, 
         { type: 'sliderComp' }, 
         { type: 'categoriesComponent' }, 
-        { type: 'productSlider'}
+        { type: 'productSlider'}, 
+        { type: 'blockContentComponent'}
       ],
     }
   ], 

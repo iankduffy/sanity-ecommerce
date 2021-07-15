@@ -32,6 +32,7 @@ import fullImageWithText from './objects/staticPageComponents/fullImageWithText'
 import heroImageWithOverlay from './objects/staticPageComponents/heroImageWithOverlay'
 import categoriesComponent from './objects/staticPageComponents/categoriesComponent'
 import productSlider from './objects/staticPageComponents/productSlider'
+import blockContentComponent from './objects/staticPageComponents/blockComponent'
 
 import sliderComp from './objects/staticPageComponents/sliderComp'
 
@@ -76,6 +77,7 @@ export default createSchema({
     sliderComp,
     categoriesComponent,
     productSlider,
+    blockContentComponent,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,

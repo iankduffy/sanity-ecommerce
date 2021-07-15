@@ -1,0 +1,17 @@
+@import 'stylesheets/module-basics.scss'; 
+
+.container {
+  margin: 0 20px; 
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  max-width: 1000px;
+
+  h2 {
+    font-size: 48px;
+    font-weight: 800;
+  }
+}

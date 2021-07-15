@@ -1,9 +1,10 @@
 import styles from './productSlider.module.scss'
 import ProductLink from './productLink/productLink'
 
+import { ProductProps } from '@type/productTypes'
 interface ProductSliderProps {
   title: string, 
-  products: Array<any>, 
+  products: Array<ProductProps>, 
   index: number
 }
 
