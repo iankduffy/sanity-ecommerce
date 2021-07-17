@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Link from 'next/link';
-import MiniBag from '../../../../minibag/minibag'
+import MiniBag from '../../../../cart/minibag'
 import SearchIcon from '../../../icons/search.js'
 import WishListIcon from '../../../icons/wishlist'
 import CartIcon from '../../../icons/cart'

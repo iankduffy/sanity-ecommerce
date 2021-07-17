@@ -3,14 +3,17 @@ import Block from '../../../lib/blockContent'
 import urlFor from '../../../lib/image'
 import srcSet from '../../../lib/srcset'
 
+import { sanityImageProps } from '@type/sanity'
+
 interface heroImageProps {
   blockContent: any, // todo Sanity Content 
-  image: any // todo Sanity Content
+  image: sanityImageProps
   index: number
 }
 
 // TypeScript 'doesn't like source tag to have width and height attributes.
-const heroImageWithOverlay = ({blockContent = '', image='', index}: heroImageProps) => {
+const heroImageWithOverlay = ({blockContent = '', image, index}: heroImageProps) => {
+
   return(
     <section className={styles.heroImageContainer}>
       <picture> 

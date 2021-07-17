@@ -1,6 +1,6 @@
 import styles from './promotionHeader.module.scss'
 
-export interface Props {
+interface Props {
   promoText: string
 }
 

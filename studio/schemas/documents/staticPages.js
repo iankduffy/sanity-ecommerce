@@ -26,7 +26,8 @@ export default {
         { type: 'sliderComp' }, 
         { type: 'categoriesComponent' }, 
         { type: 'productSlider'}, 
-        { type: 'blockContentComponent'}
+        { type: 'blockContentComponent'}, 
+        { type: 'rowImageBlockComp' }
       ],
     }
   ], 

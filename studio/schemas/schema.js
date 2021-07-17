@@ -33,6 +33,8 @@ import heroImageWithOverlay from './objects/staticPageComponents/heroImageWithOv
 import categoriesComponent from './objects/staticPageComponents/categoriesComponent'
 import productSlider from './objects/staticPageComponents/productSlider'
 import blockContentComponent from './objects/staticPageComponents/blockComponent'
+import imageBlockComponent from './objects/staticPageComponents/imageBlockComponent'
+import rowImageBlockComp from './objects/staticPageComponents/rowImageBlockComponent'
 
 import sliderComp from './objects/staticPageComponents/sliderComp'
 
@@ -78,6 +80,8 @@ export default createSchema({
     categoriesComponent,
     productSlider,
     blockContentComponent,
+    imageBlockComponent,
+    rowImageBlockComp, 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,

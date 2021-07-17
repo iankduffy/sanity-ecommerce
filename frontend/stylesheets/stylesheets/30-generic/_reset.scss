@@ -37,6 +37,7 @@ a {
 
 main {
   color: $black;
+  margin-bottom: 20px;
   @include breakpoint-max(md) {
     padding-bottom: 100px;
   }

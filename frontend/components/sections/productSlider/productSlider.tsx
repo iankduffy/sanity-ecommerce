@@ -8,10 +8,19 @@ interface ProductSliderProps {
   index: number
 }
 
+// ToDo: Add Arrows 
 const productSlider = ({title, products, index} : ProductSliderProps) => {
   return(
     <section className={styles.productSliderContainer}>
-      <h3 className="u-t-cen">{title}</h3>
+      <div className="u-dis-flex">
+        <h3 className="">{title}</h3>
+        <div className="">
+          
+        </div>
+        <div>
+          
+        </div>
+      </div>
       <div className={styles.slider}>
         {products.map((product, key) => <ProductLink {...product} index={index} key={key} />)}
       </div>

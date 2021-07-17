@@ -13,5 +13,7 @@ export {default as sliderComp } from './sliderComp/sliderComp'
 export {default as categoriesComponent } from './categoriesComponent/categoriesComponent'
 export {default as productSlider } from './productSlider/productSlider'
 export {default as blockContentComponent } from './blockContentComp/index'
+export {default as rowImageBlockComp } from './rowImageBlockComp/index'
+
 
 

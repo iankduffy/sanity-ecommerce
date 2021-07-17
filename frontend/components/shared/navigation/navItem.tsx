@@ -2,29 +2,11 @@ import styles from '../header/header.module.scss'
 import Link from 'next/link';
 import {useState} from 'react';
 import RenderSections from './renderNavComponents';
+// import DropDown from './dropdown'
 
-const DropDownItem = ({link}) => {
-  return (
-    <Link href={link?.slug?.current}>
-      <a className='u-pad-v-sm'> 
-        {link.title}
-      </a>
-    </Link>
-  )
-}
+import dynamic from 'next/dynamic'
 
-const DropDown = ({dropdownNav, navContent}) => { 
-  return ( 
-    <div className={styles.navDropDown}>
-      <div className={styles.navDropDownLinks}>
-        {dropdownNav.map((item, key) => <DropDownItem link={item} key={key} />)}
-      </div>
-      <div className={styles.navContent}>
-        <RenderSections sections={navContent}/>
-      </div>
-    </div>
-  )
-}
+const DropDown = dynamic(() => import('./dropdown'))
 
 export interface NavItemsProp {
   navTitle: string,
