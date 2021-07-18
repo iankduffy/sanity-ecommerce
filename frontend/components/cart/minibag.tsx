@@ -19,7 +19,7 @@ const MiniBag = () => {
         <span>Close</span>
       </div>
       <EmptyShoppingBag />
-      <div>
+      <div className={styles.promoText}>
         Promo Text here
       </div>
       {/* Checkout Button here */}

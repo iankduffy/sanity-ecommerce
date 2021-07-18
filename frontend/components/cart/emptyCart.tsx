@@ -1,8 +1,8 @@
-
+import styles from './minibag.module.scss'
 
 const EmptyShoppingBag = () => {
   return (
-    <div className="u-t-cen">
+    <div className={styles.emptyMinibag}>
       <p>Empty Minibag Icon</p>
       <p>Your shopping bag is empty</p>
     </div>

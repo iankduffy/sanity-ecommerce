@@ -5,7 +5,6 @@ import RenderSections from './renderNavComponents';
 // import DropDown from './dropdown'
 
 import dynamic from 'next/dynamic'
-
 const DropDown = dynamic(() => import('./dropdown'))
 
 export interface NavItemsProp {
