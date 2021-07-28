@@ -9,8 +9,8 @@ interface RowImageBlockProps {
 
 const ImageBlockComponent = ({index, image, blockContent, blockCompLength, className}) => {
   const imageBlockWidth: number = 1500 / blockCompLength
-  const imageWidth : number = parseInt(image.hotspot.width * imageBlockWidth)
-  const imageHeight : number = parseInt(image.hotspot.height * imageBlockWidth) 
+  const imageWidth = parseInt(image.hotspot.width * imageBlockWidth)
+  const imageHeight = parseInt(image.hotspot.height * imageBlockWidth) 
   
   return (
     <div className={className}>
