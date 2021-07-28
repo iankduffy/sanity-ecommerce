@@ -2,7 +2,6 @@ import styles from '../header/header.module.scss'
 import Link from 'next/link';
 import {useState} from 'react';
 import RenderSections from './renderNavComponents';
-// import DropDown from './dropdown'
 
 import dynamic from 'next/dynamic'
 const DropDown = dynamic(() => import('./dropdown'))

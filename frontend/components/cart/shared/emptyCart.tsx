@@ -1,4 +1,4 @@
-import styles from './minibag.module.scss'
+import styles from '../minibag/minibag.module.scss'
 
 const EmptyShoppingBag = () => {
   return (

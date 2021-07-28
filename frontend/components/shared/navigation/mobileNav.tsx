@@ -7,9 +7,19 @@ import CartIcon from '../icons/cart'
 import MenuIcon from '../icons/menu'
 import HomeIcon from '../icons/home'
 
-const MobileNav = ({mainMenu}) => { 
+import dynamic from 'next/dynamic';
+const MiniBag = dynamic(() => import('components/cart/minibag/minibag'))
+
+import { NavProps } from '@type/global' 
+
+interface MobileNavProps {
+  mainMenu: NavProps
+}
+
+const MobileNav = ({mainMenu} : MobileNavProps) => { 
   const [menuOpen, setMenuOpen] = useState(true)
-  
+  const [minibagOpen, setMinibagStatus] = useState(true)
+
   return ( 
     <div className={styles.mobileHeader}>
       <Link href="/">
@@ -26,9 +36,11 @@ const MobileNav = ({mainMenu}) => {
         <Link href="/wishlist">
           <a className="u-flex-column u-space-evenly"><WishListIcon /><span className="h6">Wish List</span></a>
         </Link>
-        <div className="u-flex-column u-space-evenly">
-          <CartIcon /> <span className="h6">MiniBag</span>
-        </div>
+        <Link href="/cart">
+          <a className="u-flex-column u-space-evenly" >
+            <CartIcon /> <span className="h6">MiniBag</span>
+          </a>
+        </Link>
     </div>
   )
 }
