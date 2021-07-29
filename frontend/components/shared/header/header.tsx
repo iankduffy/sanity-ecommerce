@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Nav from '../navigation/nav';
-import MiniBag from '../../cart/minibag'
+// import MiniBag from '../../cart/minibag/minibag'
 import urlFor from 'lib/image';
 import {useState} from 'react'
 import SearchBar from '../../search'
