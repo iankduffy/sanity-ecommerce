@@ -3,8 +3,8 @@ import Layout from '../../components/shared/layout/layout';
 import groq from 'groq'
 import sanity from '../../lib/sanity';
 import urlFor from '../../lib/image';
-import ProductImage from '../../components/pdp/product-image'
-import ProductForm from '../../components/pdp/product-form'
+import ProductImage from '../../components/pdp/product-image/product-image'
+import ProductForm from '../../components/pdp/product-form/product-form'
 import Block from '../../lib/blockContent'
 
 import { SiteSettingProps, NavProps } from '@type/global'
@@ -23,12 +23,9 @@ const ProductPage = ({mainMenu, siteSettings, footerMenu, productInfo} : Product
   return (
   <Layout mainMenu={mainMenu} siteSettings={siteSettings} footerMenu={footerMenu}>
     <>
-      <div className="u-dis-flex u-mar-v-md">
-        <ProductImage productImages={productInfo?.defaultProductVariant?.images}/>
+      <div className="flex-column-mobile u-mar-v-md">
+        <ProductImage productImages={productInfo.defaultProductVariant?.images}/>
         <ProductForm product={productInfo} />
-      </div>
-      <div className="u-dis-flex u-mar-h-md">
-        <Block className="col-6@md col-12" blocks={productInfo.body} />
       </div>
     </>
   </Layout>

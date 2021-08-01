@@ -1,0 +1,46 @@
+@import 'stylesheets/module-basics.scss';
+
+.sliderContainer {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.slide {
+  scroll-snap-stop: always;
+  flex-shrink: 0;
+  transition: transform 0.8s;
+  text-align: left;
+  width: 100%;
+  scroll-snap-align: start;
+}
+
+.imageGallery {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  margin: .75rem;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.galleryImage {
+  flex: 1 0 30%;
+  &:not(:last-of-type) {
+    margin-right: .75rem;
+  }
+}

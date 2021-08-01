@@ -1,5 +1,5 @@
-import ProductImage from '../pdp/product-image'
-import ProductForm from '../pdp/product-form'
+import ProductImage from '../pdp/product-image/product-image'
+import ProductForm from '../pdp/product-form/product-form'
 
 const ProductAddToBag = ({product}) => {
   return (  

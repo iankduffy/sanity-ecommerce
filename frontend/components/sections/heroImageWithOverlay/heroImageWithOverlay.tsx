@@ -10,8 +10,6 @@ interface heroImageProps {
   image: sanityImageProps
   index: number
 }
-
-// TypeScript 'doesn't like source tag to have width and height attributes.
 const heroImageWithOverlay = ({blockContent = '', image, index}: heroImageProps) => {
 
   return(

@@ -5,21 +5,24 @@
 }
 
 .variant {
-  border: 1px solid $black;
+  border: 1px solid $primary-color;
   padding: 5px;
   text-align: center;
   margin: 10px 0;
   width: auto;
   margin-right: 5px;
+  padding: 2%;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
 .checked {
-  background: $black;
+  background: $primary-color;
   color: $white;
 }
 
 .addToBagButton {
-  background: $black;
+  background: $primary-color;
   color: $white;
   text-transform: uppercase;
   padding: 15px;
@@ -27,21 +30,6 @@
   transition: 500ms;
 
   &:hover {
-    background: transparentize($black, 0.2);
-  }
-}
-
-.imageGrid {
-  display: grid;
-  gap: 10px;
-  padding: 0 10px;
-  height: 100px;
-  grid-template-columns: repeat(4, 1fr);
-  padding-top: 10px;
-
-  @include breakpoint-min(md) { 
-    grid-template-columns: 1fr;
-    padding-top: 0px;
-
+    background: transparentize($primary-color, 0.2);
   }
 }

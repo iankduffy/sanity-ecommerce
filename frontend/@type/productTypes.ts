@@ -20,4 +20,12 @@ export interface VariantProps {
   images: Array<any> // Add Sanity image
   barcode: any
 }
+
+export interface ProductImageProps {
+
+}
+
+export interface ProductImageArrayProps {
+  
+}
 // Product end s
