@@ -17,8 +17,8 @@ const VariantsSelect = ({allVariants, currentVariant, setVariant}) => {
 const VariantSelector = ({allVariants, currentVariant, setVariant}) => {
   return (
     <div className="u-dis-block">
-      <div className="u-dis-flex"> 
-        <span>Select Size</span>
+      <div className="u-dis-flex u-space-between"> 
+        <span>Select Size:</span>
         <button className="col-4">Size Guide</button>
       </div>
       <VariantsSelect allVariants={allVariants} currentVariant={currentVariant} setVariant={setVariant}/>
