@@ -16,3 +16,15 @@
     flex: 1 0 auto;
   }
 }
+
+.sliderBtn {
+  border-radius: 50%;
+  width: 50px; 
+  height: 50px; 
+  background: lightgray;
+  cursor: pointer;
+
+  &:not(:last-of-type) {
+    margin-right: 10px;
+  }
+}

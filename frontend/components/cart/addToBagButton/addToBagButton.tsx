@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { CartContext } from 'components/context/cart-context'
 import Cookies from 'js-cookie' 
 
-const AddToBagButton = ({currentVariant, title, image, slug, ...props}) => {
+const AddToBagButton = ({currentVariant, title, image, slug, styles}) => {
   const [cart, setCart] = useContext(CartContext); 
 
   const addToCart = () => { 
@@ -19,7 +19,7 @@ const AddToBagButton = ({currentVariant, title, image, slug, ...props}) => {
   }
 
   return (
-    <button className="c-btn" onClick={() => addToCart()}>
+    <button className={`c-btn ${styles}`} onClick={() => addToCart()}>
       Add To Bag
     </button>
   )

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-// import styles from 'stylesheets/components/product/productPage.module.scss'
 import VariantSelector from './variantSelector/variantSelector';
 import AddToWishListBtn from 'components/buttons/wishlist'
 import AddToBagButton from 'components/cart/addToBagButton/addToBagButton'
@@ -26,8 +25,8 @@ const ProductForm = ({product} : ProductFormProps) => {
           <VariantSelector allVariants={[product?.defaultProductVariant, ...product?.variants]} currentVariant={currentVariant} setVariant={setCurrentVariant}/>
         }
         <div className="u-dis-flex"> 
-          <AddToBagButton currentVariant={currentVariant} title={title} slug={slug} image={image}  />
-          <AddToWishListBtn />
+          <AddToBagButton currentVariant={currentVariant} title={title} slug={slug} image={image} styles={''} />
+          <AddToWishListBtn product={product} />
         </div>
       </div>
     </div>

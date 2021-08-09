@@ -1,5 +1,6 @@
 import styles from './productSlider.module.scss'
 import ProductLink from './productLink/productLink'
+import ArrowIcon from 'components/shared/icons/arrow'
 
 import { ProductProps } from '@type/productTypes'
 interface ProductSliderProps {
@@ -12,13 +13,15 @@ interface ProductSliderProps {
 const productSlider = ({title, products, index} : ProductSliderProps) => {
   return(
     <section className={styles.productSliderContainer}>
-      <div className="u-dis-flex">
+      <div className="u-dis-flex u-space-between">
         <h3 className="">{title}</h3>
-        <div className="">
-          
-        </div>
-        <div>
-          
+        <div className="u-dis-flex">
+          <button className={styles.sliderBtn}>
+            <ArrowIcon />
+          </button>
+          <button className={styles.sliderBtn}>
+            <ArrowIcon />
+          </button>
         </div>
       </div>
       <div className={styles.slider}>

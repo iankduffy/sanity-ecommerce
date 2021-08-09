@@ -1,8 +1,8 @@
 import WishListIcon from 'components/shared/icons/wishlist'
 
-const AddToWishListBtn = () => {
+const AddToWishListBtn = ({product}) => {
 
-
+  // TODO: Add To Wishlist 
 
   return (
     <button>
