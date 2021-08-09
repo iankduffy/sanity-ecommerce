@@ -11,7 +11,6 @@ class MyDocument extends Document {
       <Html>
         <Head />
         <body>
-          {typeof window === 'undefined' && ( <style id="holderStyle" dangerouslySetInnerHTML={{ __html: ` *, *::before, *::after { transition: none!important; } `, }} /> )}
           <Main />
           <NextScript />
         </body>
