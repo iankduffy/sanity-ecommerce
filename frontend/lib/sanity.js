@@ -5,7 +5,8 @@ const client = sanityClient({
   projectId: "phinh7i9",
   dataset: "production",
   useCdn: true, 
-  preview: true
+  preview: true, 
+  apiVersion: '2021-07-25',
   // useCdn == true gives fast, cheap responses using a globally distributed cache.
   // Set this to false if your application require the freshest possible
   // data always (potentially slightly slower and a bit more expensive).

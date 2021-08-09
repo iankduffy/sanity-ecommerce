@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react'
 // import * as SectionComponents from './sections'
-import {StaticPageComponents} from './sections'
+import { StaticPageComponents } from './sections'
 
 function resolveSections (section) {
   const Section = StaticPageComponents[section._type]
