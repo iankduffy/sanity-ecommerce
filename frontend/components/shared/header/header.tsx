@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Nav from '../navigation/nav';
 // import MiniBag from '../../cart/minibag/minibag'
-import urlFor from 'lib/image';
+import urlFor, { getImageDimensions } from 'lib/image';
 import {useState} from 'react'
 import SearchBar from '../../search'
 import MobileNav from '../navigation/mobileNav'
@@ -26,7 +26,7 @@ const Header = ({mainMenu, siteLogo, promotion}: Props) => {
       <PromoHeader promoText={promotion} />
       <div className={styles.oHeader}>
         <Link href="/">
-          <a><img src={urlFor(siteLogo).auto('format').width(100).url()} className={styles.oHeader__logo} alt="Site Logo"/></a>
+          <a><img src={urlFor(siteLogo).auto('format').width(100).url()} width={getImageDimensions(siteLogo).width} height={getImageDimensions(siteLogo).height} className={styles.oHeader__logo} alt="Site Logo"/></a>
         </Link>
         <Nav mainMenu={mainMenu} />
         <DesktopButtons />

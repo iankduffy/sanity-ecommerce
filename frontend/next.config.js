@@ -97,7 +97,7 @@ module.exports = {
       ...productsRoutes.filter(({slug}) => slug.current).reduce(reduceProductRoutes, {}),
     }
 
-    console.log(nextRoutes)
+    // console.log(nextRoutes)
 
     return nextRoutes
   }

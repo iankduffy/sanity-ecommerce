@@ -17,7 +17,7 @@ const MiniBag = () => {
   const [cart, setCart] = useContext<any>(CartContext);
   const cartHasLineItems : boolean = cart.cart.products.length
 
-  console.log(cart)
+  // console.log(cart)
   return (
     <div className={styles.minibag}>
       <div className={styles.headerContainer}>

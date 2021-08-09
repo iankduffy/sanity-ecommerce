@@ -30,7 +30,7 @@ app.prepare()
 
   server.get('/category/:id', (req, res) => {
     const actualPage = `/category/${req.params.id}`
-    console.log(req.params)
+    // console.log(req.params)
     const queryParams = { id: req.params.id }
     app.render(req, res, actualPage, queryParams)
   })

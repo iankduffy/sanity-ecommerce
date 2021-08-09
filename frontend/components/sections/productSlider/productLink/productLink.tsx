@@ -13,7 +13,7 @@ interface ProductLinkProps {
 }
 
 const ProductLink = ({slug, defaultProductVariant, title, index} : ProductLinkProps) => {
-  console.log(slug)
+  // console.log(slug)
   return ( 
     <Link href={`${slug}`} >
       <a className={styles.productLink}>

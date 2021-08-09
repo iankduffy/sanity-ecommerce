@@ -9,7 +9,7 @@ export interface Props {
 }
 
 const Nav = ({mainMenu}: Props) => {
-  console.log(mainMenu)
+  // console.log(mainMenu)
   return ( 
     <nav className={styles.nav}>
       {mainMenu?.navItems?.map((menu, key) => 

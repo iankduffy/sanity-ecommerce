@@ -8,7 +8,7 @@ const CartPage = () => {
   const [cart, setCart] = useContext(CartContext);
   const cartHasLineItems : boolean = cart.cart.products.length
 
-  console.log(cart)
+  // console.log(cart)
 
   return (
     <div>
