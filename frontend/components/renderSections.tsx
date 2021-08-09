@@ -1,8 +1,9 @@
 import React, {Fragment} from 'react'
-import * as SectionComponents from './sections'
+// import * as SectionComponents from './sections'
+import { StaticPageComponents } from './sections'
 
 function resolveSections (section) {
-  const Section = SectionComponents[section._type]
+  const Section = StaticPageComponents[section._type]
 
   if (Section) {
     return Section
