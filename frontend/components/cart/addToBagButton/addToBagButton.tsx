@@ -14,7 +14,7 @@ const AddToBagButton = ({currentVariant, title, image, slug, styles}) => {
     }
 
     let newProductList = [...cart.cart.products, lineItem]
-    setCart({cart: { products: newProductList }})
+    // setCart({cart: { products: newProductList }})
     Cookies.set('cart', {cart: { products: newProductList }})
   }
 
