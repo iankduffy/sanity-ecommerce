@@ -10,7 +10,9 @@ const categoryLink = ({title, buttonText, buttonUrl, image, index} : CategoryLin
   return(
     <Link href={buttonUrl}>
       <a className={styles.categoryLink} >
-        <img src={urlFor(image).width(400).height(600).quality(50).auto('format').url()} srcSet={srcSet(image, 700)} className="u-height-100" width={getImageDimensions(image).width.toString()} height={getImageDimensions(image).height.toString()} loading={index < 2 ? 'eager' : 'lazy'}/>
+        <img src={urlFor(image).width(250).height(500).quality(50).auto('format').url()} 
+        srcSet={srcSet(image, 700)} 
+        className="u-height-100" width={getImageDimensions(image).width.toString()} height={getImageDimensions(image).height.toString()} loading={index < 2 ? 'eager' : 'lazy'}/>
         <div className={styles.content}>
           <p className="h3">{title}</p>
           <button className={styles.button}>{buttonText}</button>
