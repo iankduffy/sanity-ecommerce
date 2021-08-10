@@ -5,7 +5,7 @@
   color: #fff;
   display: block;
   padding: 10px;
-  transition: 500ms;
+  transition: background 500ms;
   &:hover {
     background: #444;
   }
@@ -14,7 +14,7 @@
     width: 100%; 
     text-align: center;
     padding: 10px;
-    transition: 500ms;
+    transition: background 500ms;
     display: block;
     color: #1896D9;
     &:hover {

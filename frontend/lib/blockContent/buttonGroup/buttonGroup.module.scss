@@ -15,7 +15,7 @@
   border-radius: 50px;
   max-width: 300px;
   flex: 1 1 0px; 
-  transition: 300ms;
+  transition: background 300ms;
   
   &:not(:last-child) {
     margin-right: 10px 

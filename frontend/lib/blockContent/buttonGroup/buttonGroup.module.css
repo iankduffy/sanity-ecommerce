@@ -1,0 +1,1 @@
+.buttonGroup{display:flex;justify-content:center;max-width:90%;margin:0 auto}.button{background:#282828;color:#fff;padding:15px 21px;width:100%;border-radius:50px;max-width:300px;flex:1 1 0px;transition:background 300ms}.button:not(:last-child){margin-right:10px}.button:hover{background:rgba(40,40,40,.85)}
