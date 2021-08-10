@@ -3,9 +3,9 @@ import srcSet from 'lib/srcset'
 
 interface ImageProps {
   mobileImage: any, 
-  width: string, 
-  height: string,
-  desktopImage: any, 
+  width?: string, 
+  height?: string,
+  desktopImage?: any, 
   isLazyLoaded: boolean, 
   alt: string
 }
@@ -15,9 +15,11 @@ const ImageComp = ({
   width, 
   height, 
   desktopImage, 
-  isLazyLoaded, 
+  isLazyLoaded = true, 
   alt
 }: ImageProps) => {
+
+  // ToDo: Add Preload Images 
 
   if (desktopImage) {
     return (
@@ -31,9 +33,14 @@ const ImageComp = ({
   }
 
   // if single image 
+  // TODO: We need width and height
   return (
     <>
-      <img />
+      <img 
+        src={urlFor(mobileImage).fit('fill').quality(30).auto('format').url()}
+        alt={alt}
+        loading={isLazyLoaded ? 'lazy' : 'eager'}
+      />
     </>
   )
 }
