@@ -1,5 +1,5 @@
 import { url } from 'inspector';
-import urlFor, {getImageDimensions, getCrop} from 'lib/image'; 
+import urlFor, {getImageDimensions} from 'lib/image'; 
 import srcSet from 'lib/srcset'
 
 interface ImageProps {
