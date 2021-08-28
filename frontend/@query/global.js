@@ -30,6 +30,10 @@ export const homePageQuery = `*[_type == "siteSettings"][0] {
     ...,
     content[] {
       ...,
+      _type == "heroImageWithOverlay" => {
+        ...,
+        "metadata": image.asset->metadata.lqip
+      },
       _type == "productSlider" => {
         products[]->{
           title, 
@@ -63,6 +67,10 @@ export const staticPageQuery = `*[_type == "routes" && slug.current == $slug][0]
     ...,
     content[] {
       ...,
+      _type == "heroImageWithOverlay" => {
+        ...,
+        "metadata": image.asset->metadata.dimensions.aspectRatio
+      }
       _type == "productSlider" => {
         products[]->{
           title, 

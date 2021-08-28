@@ -1,10 +1,17 @@
 import urlFor from './image'
 
-const srcSet = (image, width, startWidth = 400) => {
+const srcSet = (image, maxWidth, startWidth = 400, originalWidth, originalHeight) => {
   let imageSrcSet = []
 
-  for (let i = startWidth; i <= width; i += 100) {
-    let string = `${urlFor(image).width(i).quality(80).auto('format').url()} ${i}w`
+  for (let i = startWidth; i <= maxWidth; i += 100) {
+    let string
+    if (originalWidth && originalHeight){
+      const height = Math.floor((Math.floor(originalHeight) / Math.floor(originalWidth)) * i)
+      string = `${urlFor(image).width(i).height(height).quality(30).auto('format').url()} ${i}w`
+    } else {
+      string = `${urlFor(image).width(i).quality(30).auto('format').url()} ${i}w`
+    }
+    
     imageSrcSet.push(string)
   }
 

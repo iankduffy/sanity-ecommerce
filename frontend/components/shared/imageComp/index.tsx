@@ -1,45 +1,69 @@
-import urlFor, {getImageDimensions} from 'lib/image'; 
+import { url } from 'inspector';
+import urlFor, {getImageDimensions, getCrop} from 'lib/image'; 
 import srcSet from 'lib/srcset'
 
 interface ImageProps {
   mobileImage: any, 
-  width?: string, 
-  height?: string,
+  minWidth: number, 
+  maxWidth: number,
   desktopImage?: any, 
   isLazyLoaded: boolean, 
-  alt: string
+  alt: string, 
+  metadata?: any
 }
 
 const ImageComp = ({
   mobileImage, 
-  width, 
-  height, 
+  minWidth,
+  maxWidth,
   desktopImage, 
   isLazyLoaded = true, 
-  alt
+  alt, 
+  metadata
 }: ImageProps) => {
 
   // ToDo: Add Preload Images 
+  // ToDo: Calculate Height frrom Sanity\
+  
+  const {mobileWidth, mobileHeight} = getImageDimensions(mobileImage)
+
+  const defaultMobileHeight = Math.floor((Math.floor(mobileHeight) / Math.floor(mobileWidth)) * minWidth)
 
   if (desktopImage) {
     return (
       <picture>
         {/* Desktop Image */}
-        <source /> 
+        <source 
+          media="(min-width: 738px)"
+          width={minWidth}
+          height={defaultMobileHeight}
+          srcSet={srcSet(mobileImage, maxWidth, minWidth, mobileWidth, mobileHeight)}
+          /> 
         {/* Mobile Image */}
-        <img />
+        <img 
+          src={urlFor(mobileImage).width(minWidth).height(defaultMobileHeight).fit('fill').quality(50).auto('format').url()}
+          alt={alt}
+          loading={isLazyLoaded ? 'lazy' : 'eager'}
+          width={minWidth}
+          height={defaultMobileHeight}
+          srcSet={srcSet(mobileImage, maxWidth, minWidth, mobileWidth, mobileHeight)}
+      />
       </picture>
     )
   }
+
 
   // if single image 
   // TODO: We need width and height
   return (
     <>
       <img 
-        src={urlFor(mobileImage).fit('fill').quality(30).auto('format').url()}
+        src={urlFor(mobileImage).width(minWidth).height(defaultMobileHeight).fit('fill').quality(50).auto('format').url()}
         alt={alt}
         loading={isLazyLoaded ? 'lazy' : 'eager'}
+        width={minWidth}
+        height={defaultMobileHeight}
+        srcSet={srcSet(mobileImage, maxWidth, minWidth, mobileWidth, mobileHeight)}
       />
     </>
   )
