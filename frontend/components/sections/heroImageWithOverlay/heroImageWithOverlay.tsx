@@ -17,7 +17,6 @@ console.log({props})
     <section className={styles.heroImageContainer}>
       <ImageComp 
         mobileImage={image}
-        // desktopImage={image}
         minWidth={400}
         maxWidth={1920}
         isLazyLoaded={index < 2 ? false : true} 
