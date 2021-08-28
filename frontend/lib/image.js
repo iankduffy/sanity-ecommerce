@@ -22,3 +22,9 @@ export const getImageDimensions = ({asset}) => {
     height
   }
 }
+
+// export const getCrop = async ({asset}) => {
+//   const getImage = await urlFor(asset)
+
+//   console.log(getImage)
+// } 
