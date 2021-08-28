@@ -1,7 +1,5 @@
 import styles from './heroImageWithOverlay.module.scss'
 import Block from '../../../lib/blockContent'
-import urlFor, {getImageDimensions} from '../../../lib/image'
-import srcSet from '../../../lib/srcset'
 import ImageComp from 'components/shared/imageComp'
 
 import { sanityImageProps } from '@type/sanity'
