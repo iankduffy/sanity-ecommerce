@@ -14,7 +14,6 @@ interface heroImageProps {
 }
 
 const heroImageWithOverlay = ({blockContent = '', image, index, metadata, ...props}: heroImageProps) => {
-console.log({props})
   return(
     <section className={styles.heroImageContainer}>
       <ImageComp 
