@@ -69,7 +69,7 @@ export const staticPageQuery = `*[_type == "routes" && slug.current == $slug][0]
       ...,
       _type == "heroImageWithOverlay" => {
         ...,
-        "metadata": image.asset->metadata.dimensions.aspectRatio
+        "metadata": image.asset->metadata.lqip
       }
       _type == "productSlider" => {
         products[]->{
