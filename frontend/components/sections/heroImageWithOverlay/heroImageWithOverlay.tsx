@@ -8,19 +8,19 @@ interface heroImageProps {
   blockContent: any, // todo Sanity Content 
   image: sanityImageProps
   index: number,
-  metadata: any
+  metadata?: any
 }
 
-const heroImageWithOverlay = ({blockContent = '', image, index, metadata, ...props}: heroImageProps) => {
-console.log({props})
+const heroImageWithOverlay = ({blockContent = '', image, index, metadata}: heroImageProps) => {
   return(
     <section className={styles.heroImageContainer}>
       <ImageComp 
         mobileImage={image}
         minWidth={400}
         maxWidth={1920}
+        alt={'Hero Image TODO'} 
         isLazyLoaded={index < 2 ? false : true} 
-        alt={'Hero Image TODO'} />
+      />
       <div className={styles.content}>
         <Block blocks={blockContent} />
       </div>
