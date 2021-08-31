@@ -7,7 +7,7 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string'
-    },
+    }, 
     {
       name: 'slug',
       title: 'Slug',
@@ -72,8 +72,18 @@ export default {
       ]
     },
     {
-      name: 'body',
-      title: 'Body',
+      name: 'details',
+      title: 'Details',
+      type: 'blockContent'
+    }, 
+    {
+      name: 'features',
+      title: 'Features',
+      type: 'blockContent'
+    }, 
+    {
+      name: 'delivery',
+      title: 'Delivery Information',
       type: 'blockContent'
     }
   ],

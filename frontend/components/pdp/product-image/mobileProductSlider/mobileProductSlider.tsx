@@ -3,17 +3,18 @@ import urlFor from 'lib/image';
 import srcSet from 'lib/srcset';
 import styles from './mobileProductSlider.module.scss'
 
-{/* <img src={urlFor(image).height(400).width(500).auto('format').url()} className="col-10@md col-12"/> */}
-
 const SliderImage = ({img}) => {
   return (
     <>
       <img src={urlFor(img).height(400).width(500).auto('format').url()} className={styles.slide}/>
     </>
   )
-
 }
 
+// Todo: First Gallery Image is the main image to reduce network requests
+// Todo: add lazyload to slider images off screen 
+// Todo: Add Preload for first images
+// Todo: Merge Mobile and Desktop using CSS
 const MobileProductSlider = ({images}) => {
   return (
     <div>

@@ -23,7 +23,7 @@ const ProductPage = ({mainMenu, siteSettings, footerMenu, productInfo} : Product
   return (
   <Layout mainMenu={mainMenu} siteSettings={siteSettings} footerMenu={footerMenu}>
     <>
-      <div className="flex-column-mobile u-mar-v-md">
+      <div className="flex-column-mobile u-mar-v-md u-max-width-1400">
         <ProductImage productImages={productInfo.defaultProductVariant?.images}/>
         <ProductForm product={productInfo} />
       </div>

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { useContext, useState } from 'react';
-import { CartContext } from '../../context/cart-context'
+import { CartContext, useCart } from '../../context/cart-context'
 // import Cookies from 'js-cookie';
 import styles from './minibag.module.scss'
 import EmptyShoppingBag from '../shared/emptyCart'
@@ -14,10 +14,10 @@ import ProductList from './productList';
 const MiniBag = () => {
   // ToDo: Create Cart Object
   // ToDo: Create Better Cart 
-  const [cart, setCart] = useContext<any>(CartContext);
+  const { getCart } = useCart()
+  const cart = getCart()
   const cartHasLineItems : boolean = cart.cart.products.length
 
-  // console.log(cart)
   return (
     <div className={styles.minibag}>
       <div className={styles.headerContainer}>

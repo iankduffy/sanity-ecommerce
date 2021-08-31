@@ -1,11 +1,11 @@
 import WishListIcon from 'components/shared/icons/wishlist'
+import { useWishlist } from 'components/context/wishlist/wishlist'
 
-const AddToWishListBtn = ({product}) => {
-
-  // TODO: Add To Wishlist 
+const AddToWishListBtn = ({product, currentVariant}) => {
+  const { addToWishlist } = useWishlist()
 
   return (
-    <button>
+    <button className="col-3" onClick={() => addToWishlist(product, currentVariant)}>
       <WishListIcon />
     </button>
   )

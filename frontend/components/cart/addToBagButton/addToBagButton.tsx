@@ -1,25 +1,12 @@
 import { useContext } from 'react';
-import { CartContext } from 'components/context/cart-context'
+import { CartContext, useCart } from 'components/context/cart-context'
 import Cookies from 'js-cookie' 
 
-const AddToBagButton = ({currentVariant, title, image, slug, styles}) => {
-  const [cart, setCart] = useContext(CartContext); 
-
-  const addToCart = () => { 
-    let lineItem = {
-      defaultImage: image,
-      productTitle: title,
-      slug: slug,
-      lineitem: {...currentVariant}
-    }
-
-    let newProductList = [...cart.cart.products, lineItem]
-    // setCart({cart: { products: newProductList }})
-    Cookies.set('cart', {cart: { products: newProductList }})
-  }
+const AddToBagButton = ({currentVariant, title, image, slug}) => {
+  const { addToCart } = useCart()
 
   return (
-    <button className={`c-btn ${styles}`} onClick={() => addToCart()}>
+    <button className={`c-btn col-8 u-pad-v-md`} onClick={() => addToCart(currentVariant, title, image, slug)}>
       Add To Bag
     </button>
   )

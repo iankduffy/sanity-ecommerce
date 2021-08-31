@@ -1,0 +1,21 @@
+@import 'stylesheets/module-basics.scss';
+
+.summary {
+  text-transform: uppercase;
+  padding: 20px 0;
+  cursor: pointer;
+  list-style: none;
+  font-size: 1.1rem;
+
+  &::marker {
+    display: none;
+  }
+}
+
+.details {
+  border-top: 1px solid $grey-color;
+
+  &:last-of-type {
+    border-bottom: 1px solid $grey-color;
+  }
+}

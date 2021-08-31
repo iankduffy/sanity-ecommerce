@@ -1,4 +1,3 @@
-import { url } from 'inspector';
 import urlFor, {getImageDimensions} from 'lib/image'; 
 import srcSet from 'lib/srcset'
 
@@ -25,9 +24,9 @@ const ImageComp = ({
   // ToDo: Add Preload Images 
   // ToDo: Calculate Height frrom Sanity\
   
-  const {mobileWidth, mobileHeight} = getImageDimensions(mobileImage)
+  const { width , height } = getImageDimensions(mobileImage)
 
-  const defaultMobileHeight = Math.floor((Math.floor(mobileHeight) / Math.floor(mobileWidth)) * minWidth)
+  const defaultheight = Math.floor((Math.floor(height) / Math.floor(width)) * minWidth)
 
   if (desktopImage) {
     return (
@@ -36,17 +35,17 @@ const ImageComp = ({
         <source 
           media="(min-width: 738px)"
           width={minWidth}
-          height={defaultMobileHeight}
-          srcSet={srcSet(mobileImage, maxWidth, minWidth, mobileWidth, mobileHeight)}
+          height={defaultheight}
+          srcSet={srcSet(mobileImage, maxWidth, minWidth, width, height)}
           /> 
         {/* Mobile Image */}
         <img 
-          src={urlFor(mobileImage).width(minWidth).height(defaultMobileHeight).fit('fill').quality(50).auto('format').url()}
+          src={urlFor(mobileImage).width(minWidth).height(defaultheight).fit('fill').quality(50).auto('format').url()}
           alt={alt}
           loading={isLazyLoaded ? 'lazy' : 'eager'}
           width={minWidth}
-          height={defaultMobileHeight}
-          srcSet={srcSet(mobileImage, maxWidth, minWidth, mobileWidth, mobileHeight)}
+          height={defaultheight}
+          srcSet={srcSet(mobileImage, maxWidth, minWidth, width, height)}
       />
       </picture>
     )
@@ -58,12 +57,12 @@ const ImageComp = ({
   return (
     <>
       <img 
-        src={urlFor(mobileImage).width(minWidth).height(defaultMobileHeight).fit('fill').quality(50).auto('format').url()}
+        src={urlFor(mobileImage).width(minWidth).height(defaultheight).fit('fill').quality(50).auto('format').url()}
         alt={alt}
         loading={isLazyLoaded ? 'lazy' : 'eager'}
         width={minWidth}
-        height={defaultMobileHeight}
-        srcSet={srcSet(mobileImage, maxWidth, minWidth, mobileWidth, mobileHeight)}
+        height={defaultheight}
+        srcSet={srcSet(mobileImage, maxWidth, minWidth, width, height)}
       />
     </>
   )

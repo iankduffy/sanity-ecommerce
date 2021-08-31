@@ -8,7 +8,9 @@ export interface ProductProps {
   vendor: any, 
   blurb: any,
   categories: Array<any>, 
-  body: any // Bug: Type 'BlockContentProps' is not assignable to type 'string'.
+  details?: any // Bug: Type 'BlockContentProps' is not assignable to type 'string'.
+  features?: any // Bug: Type 'BlockContentProps' is not assignable to type 'string'.
+  delivery?: any // Bug: Type 'BlockContentProps' is not assignable to type 'string'.
 }
 
 export interface VariantProps {

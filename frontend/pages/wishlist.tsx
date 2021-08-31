@@ -1,10 +1,13 @@
 import Layout from '../components/shared/layout/layout';
 import groq from 'groq'
 import sanity from '../lib/sanity';
+import { useEffect } from 'react';
 
 import { SiteSettingProps, NavProps } from '@type/global'
 
 import { siteSettingsQuery, mainMenuQuery, footerMenuQuery } from '@query/global'
+
+import { useWishlist } from 'components/context/wishlist/wishlist';
 
 export interface StaticPageProps {
   siteSettings: SiteSettingProps, 
@@ -14,6 +17,15 @@ export interface StaticPageProps {
 
 
 const WishListPage = ({mainMenu, siteSettings, footerMenu}) => {
+  const { getWishlist } = useWishlist()
+
+  useEffect(() => {
+    // Load Data from CMS for products
+  }, [])
+
+
+  console.log(getWishlist())
+
   return (
     <Layout mainMenu={mainMenu} siteSettings={siteSettings} footerMenu={footerMenu}>
       <p>Wishlist</p>
