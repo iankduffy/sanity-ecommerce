@@ -19,9 +19,9 @@ export const useWishlist = () => {
     }
 
     // Todo Fix this
-    let newWishList = [...wishList.products, item]
-    setWishlist({products: newWishList })
-    Cookies.set('wishlist', { products: newWishList })
+    // let newWishList = [...wishList.products, item]
+    // setWishlist({products: newWishList })
+    // Cookies.set('wishlist', { products: newWishList })
   }
 
   const removeFromWishlist = () => {
